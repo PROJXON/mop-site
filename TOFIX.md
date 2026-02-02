@@ -1,0 +1,3 @@
+- Nav bar 'partners' drop down
+- Change color schemes
+- Fonts

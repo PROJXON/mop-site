@@ -49,7 +49,7 @@ const NavBarResponsive: React.FC = () => {
             {/* Homepage Button */}
             <li>
               <Link href="/" className="btn btn-ghost">
-                Homepage
+                Home
               </Link>
             </li>
 
@@ -86,7 +86,7 @@ const NavBarResponsive: React.FC = () => {
             <li>
               <details>
                 <summary className="btn btn-ghost">Partner</summary>
-                <ul className="p-2 bg-base-100 rounded-box z-50 w-52 shadow-lg">
+                <ul className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                   <li>
                     <Link href="/partner/sponsor">Sponsor</Link>
                   </li>

@@ -15,7 +15,7 @@ const Info: React.FC<InfoProps> = ({
   imageUrl,
 }) => {
   return (
-    <div className="info-section relative isolate overflow-hidden bg-white sm:py-8">
+    <div className="info-section relative isolate overflow-hidden sm:py-8">
       <h2 className="text-3xl font-bold text-grey-500 mx-auto text-center mb-5">
         {title}
       </h2>

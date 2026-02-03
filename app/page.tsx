@@ -1,5 +1,7 @@
 import CountdownTimer from "@/components/Countdown";
 import Info from "@/components/Info";
+import WhyAttendMOP from "@/components/Whymop";
+import SpeakerSection from "@/components/Speaker";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -49,6 +51,20 @@ Set against a backdrop of mid-century modern design and a relaxed cocktail-loung
         Whether through structured group interactions or organic, one-on-one breakthroughs, you’ll enter a room of strangers and leave with 
         a community of allies ready to fuel your next big move."
       />
+
+      <WhyAttendMOP />
+      <SpeakerSection
+        speaker={{
+          name: "Jane Doe",
+          title: "Chief Innovation Officer",
+          company: "TechCorp Inc.",
+          description:
+            "Jane Doe is a visionary leader with over 15 years of experience in driving innovation and growth in the tech industry. As Chief Innovation Officer at TechCorp Inc., she has spearheaded numerous successful initiatives that have transformed the company's product offerings and market presence. Jane is passionate about fostering a culture of creativity and collaboration, and she is dedicated to helping organizations unlock their full potential through strategic innovation.",
+          imageUrl: "/speakers/jane-doe.jpg",
+          linkedinUrl: "https://www.linkedin.com/in/janedoe",
+        }}
+      />
+      {/* end of page */}
     </div>
   );
 }

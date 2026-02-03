@@ -60,7 +60,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     <div className="flex justify-center items-center font-sans">
       <div className="countdown-container flex gap-4 text-center">
         {/* Days */}
-        <div className="time-box bg-gray-100 p-4 rounded-lg min-w-[70px] shadow-md lg:p-4 lg:rounded-lg lg:shadow-md md:p-4 md:rounded-lg md:shadow-md sm:p-0 sm:rounded-none sm:shadow-sm sm:min-w-0">
+        <div className="time-box bg-gray-100 p-4 rounded-lg min-w-17.5 shadow-md lg:p-4 lg:rounded-lg lg:shadow-md md:p-4 md:rounded-lg md:shadow-md sm:p-0 sm:rounded-none sm:shadow-sm sm:min-w-0">
           <span className="number block text-4xl font-bold text-gray-800 lg:text-4xl md:text-3xl sm:text-xl">
             {timeLeft.days}
           </span>
@@ -70,7 +70,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
         </div>
 
         {/* Hours */}
-        <div className="time-box bg-gray-100 p-4 rounded-lg min-w-[70px] shadow-md lg:p-4 lg:rounded-lg lg:shadow-md md:p-4 md:rounded-lg md:shadow-md sm:p-0 sm:rounded-none sm:shadow-sm sm:min-w-0">
+        <div className="time-box bg-gray-100 p-4 rounded-lg min-w-17.5 shadow-md lg:p-4 lg:rounded-lg lg:shadow-md md:p-4 md:rounded-lg md:shadow-md sm:p-0 sm:rounded-none sm:shadow-sm sm:min-w-0">
           <span className="number block text-4xl font-bold text-gray-800 lg:text-4xl md:text-3xl sm:text-xl">
             {timeLeft.hours}
           </span>
@@ -80,7 +80,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
         </div>
 
         {/* Minutes */}
-        <div className="time-box bg-gray-100 p-4 rounded-lg min-w-[70px] shadow-md lg:p-4 lg:rounded-lg lg:shadow-md md:p-4 md:rounded-lg md:shadow-md sm:p-0 sm:rounded-none sm:shadow-sm sm:min-w-0">
+        <div className="time-box bg-gray-100 p-4 rounded-lg min-w-17.5 shadow-md lg:p-4 lg:rounded-lg lg:shadow-md md:p-4 md:rounded-lg md:shadow-md sm:p-0 sm:rounded-none sm:shadow-sm sm:min-w-0">
           <span className="number block text-4xl font-bold text-gray-800 lg:text-4xl md:text-3xl sm:text-xl">
             {timeLeft.minutes}
           </span>
@@ -90,7 +90,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
         </div>
 
         {/* Seconds - Hidden on mobile */}
-        <div className="time-box bg-gray-100 p-4 rounded-lg min-w-[70px] shadow-md lg:p-4 lg:rounded-lg lg:shadow-md md:p-4 md:rounded-lg md:shadow-md sm:show">
+        <div className="time-box bg-gray-100 p-4 rounded-lg min-w-17.5 shadow-md lg:p-4 lg:rounded-lg lg:shadow-md md:p-4 md:rounded-lg md:shadow-md sm:show">
           <span className="number block text-4xl font-bold text-gray-800 lg:text-4xl md:text-3xl">
             {timeLeft.seconds}
           </span>

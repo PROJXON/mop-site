@@ -2,6 +2,7 @@ import CountdownTimer from "@/components/Countdown";
 import Info from "@/components/Info";
 import WhyAttendMOP from "@/components/Whymop";
 import SpeakerSection from "@/components/Speaker";
+import Timeline from "@/components/Timeline";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -64,6 +65,14 @@ Set against a backdrop of mid-century modern design and a relaxed cocktail-loung
           linkedinUrl: "https://www.linkedin.com/in/janedoe",
         }}
       />
+      {/* The activity line up */}
+      <div className="text-center my-12">
+        <h2 className="text-4xl font-bold mb-4">Event Timeline</h2>
+        <p className="text-lg text-gray-600">
+          A sneak peek into the exciting activities planned for the day
+        </p>
+      </div>
+      <Timeline />
       {/* end of page */}
     </div>
   );

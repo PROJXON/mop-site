@@ -6,7 +6,7 @@ const NavBarResponsive: React.FC = () => {
   return (
     <>
       {/* Main Navbar */}
-      <div className="navbar bg-base-100 px-4 lg:px-8">
+      <div className="navbar bg-base-100 px-4 lg:px-8 sticky top-0 z-50 shadow-md">
         {/* Mobile Menu Button */}
         <div className="flex-none lg:hidden">
           <label htmlFor="mobile-drawer" className="btn btn-square btn-ghost">
@@ -33,8 +33,14 @@ const NavBarResponsive: React.FC = () => {
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
             {/* Logo placeholder - replace with your actual logo */}
-            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-content font-bold text-xl">M</span>
+            <div className="w-10 h-10 bg-primary square-full flex items-center justify-center">
+              <Image
+                src="/logo.png"
+                alt="Momentum Logo"
+                width={50}
+                height={50}
+                className="object-contain"
+              />
             </div>
             <span className="text-lg lg:text-xl font-bold hidden sm:inline">
               Momentum Office Party
@@ -101,7 +107,7 @@ const NavBarResponsive: React.FC = () => {
       </div>
 
       {/* Grey bar underneath */}
-      <div className="h-1 bg-gray-300"></div>
+      <div className="h-1 bg-primary"></div>
 
       {/* Mobile Drawer */}
       <div className="drawer drawer-end lg:hidden">

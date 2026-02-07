@@ -21,11 +21,11 @@ const SpeakerSection: React.FC<SpeakerSectionProps> = ({ speaker }) => {
         <div className="flex flex-col lg:flex-row gap-8 items-center">
           {/* Left side - Speaker Image (40%) */}
           <div className="lg:w-2/5">
-            <div className="relative">
+            <div className="relative hover-3d">
               <img
                 src={speaker.imageUrl}
                 alt={speaker.name}
-                className="w-full h-auto rounded-2xl shadow-2xl object-cover aspect-square"
+                className="w-full h-full rounded-2xl shadow-2xl object-cover aspect-square"
               />
               {/* Optional: Decorative element */}
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-full -z-10"></div>

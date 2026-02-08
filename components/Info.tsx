@@ -23,8 +23,8 @@ const Info: React.FC<InfoProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center ">
           {/* Text Content - 1 column (25%) */}
           <div className="lg:col-span-2 space-y-6">
-            <h1 className="font-semibold text-gray-900">{descriptionpt1}</h1>
-            <h1 className="font-semibold text-gray-900">{descriptionpt2}</h1>
+            <h1 className="font-semibold">{descriptionpt1}</h1>
+            <h1 className="font-semibold">{descriptionpt2}</h1>
           </div>
 
           {/* Image - 3 columns (75%) */}

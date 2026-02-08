@@ -61,7 +61,11 @@ const NavBarResponsive: React.FC = () => {
 
             {/* RSVP Button */}
             <li>
-              <Link href="/rsvp" className="btn btn-ghost">
+              <Link
+                href="https://www.eventbrite.com/e/momentum-office-party-networking-las-vegas-spring-social-tickets-1980690107430?aff=oddtdtcreator"
+                className="btn btn-ghost"
+                target="_blank"
+              >
                 RSVP
               </Link>
             </li>
@@ -74,23 +78,16 @@ const NavBarResponsive: React.FC = () => {
             </li>
 
             {/* Calendar Dropdown */}
+
             <li>
-              <details>
-                <summary className="btn btn-ghost">Calendar</summary>
-                <ul className="p-2 bg-base-100 rounded-box z-50 w-52 shadow-lg">
-                  <li>
-                    <Link href="/events/upcoming">Upcoming Events</Link>
-                  </li>
-                  <li>
-                    <Link href="/events/past">Past Events</Link>
-                  </li>
-                </ul>
-              </details>
+              <Link href="/upcoming" className="btn btn-ghost">
+                Upcoming Events
+              </Link>
             </li>
 
             {/* Partner Dropdown */}
             <li>
-              <details>
+              <details className="dropdown-end">
                 <summary className="btn btn-ghost">Partner</summary>
                 <ul className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                   <li>
@@ -101,6 +98,11 @@ const NavBarResponsive: React.FC = () => {
                   </li>
                 </ul>
               </details>
+            </li>
+            <li>
+              <Link href="/faq" className="btn btn-ghost">
+                FAQs
+              </Link>
             </li>
           </ul>
         </div>
@@ -121,7 +123,10 @@ const NavBarResponsive: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link href="/rsvp" className="text-lg">
+              <Link
+                href="https://www.eventbrite.com/e/momentum-office-party-networking-las-vegas-spring-social-tickets-1980690107430?aff=oddtdtcreator"
+                className="text-lg"
+              >
                 RSVP
               </Link>
             </li>
@@ -133,17 +138,9 @@ const NavBarResponsive: React.FC = () => {
 
             {/* Calendar Section */}
             <li>
-              <details>
-                <summary className="text-lg">Calendar</summary>
-                <ul>
-                  <li>
-                    <Link href="/events/upcoming">Upcoming Events</Link>
-                  </li>
-                  <li>
-                    <Link href="/events/past">Past Events</Link>
-                  </li>
-                </ul>
-              </details>
+              <Link href="/upcoming" className="btn btn-ghost">
+                Upcoming Events
+              </Link>
             </li>
 
             {/* Partner Section */}

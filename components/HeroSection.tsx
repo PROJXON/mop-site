@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import "./hero-scroll.css";
 import CountdownTimer from "./Countdown";
+import Link from "next/link";
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLElement>(null);
@@ -51,20 +52,23 @@ export default function HeroSection() {
             Momentum Office Party 2026
           </h1>
           <p className="hero-date mb-3 text-xl">March 7th, 2026 • 3:00 PM</p>
-          <p className="hero-description mb-8 text-lg opacity-90">
-            Get ready for an amazing experience with your colleagues!
+          <p className="hero-description mb-8 text-3xl italic opacity-90">
+            Elevate Your Network
           </p>
 
           {/* Countdown Timer */}
-          <div className="hero-countdown">
+          <div className="hero-countdown ">
             <CountdownTimer targetDate="Mar 07, 2026 15:00:00" />
           </div>
 
           <div className="hero-buttons mt-8 flex gap-4 justify-center">
-            <button className="btn btn-outline hover:bg-primary btn-lg">
+            <Link
+              href="https://www.eventbrite.com/e/momentum-office-party-networking-las-vegas-spring-social-tickets-1980690107430?aff=oddtdtcreator"
+              className="btn btn-primary text-black btn-lg"
+              target="_blank"
+            >
               RSVP Now
-            </button>
-            <button className="btn btn-outline btn-lg">Learn More</button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,7 +1,9 @@
-- Nav bar 'partners' drop down
+- Navbar only one dropdown should be active
+- Make dropdown go away after page change
 
 - Change color schemes
 - Fonts
+- Fix dark mode colors
 
 Home page:
 

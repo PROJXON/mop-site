@@ -39,12 +39,10 @@ const SpeakerSection: React.FC<SpeakerSectionProps> = ({ speaker }) => {
               <p className="text-xl text-primary font-semibold">
                 {speaker.title}
               </p>
-              <p className="text-lg text-gray-600">{speaker.company}</p>
+              <p className="text-lg ">{speaker.company}</p>
             </div>
 
-            <p className="text-lg leading-relaxed text-gray-700">
-              {speaker.description}
-            </p>
+            <p className="text-lg leading-relaxed ">{speaker.description}</p>
 
             {/* LinkedIn Link */}
             <div className="pt-4">

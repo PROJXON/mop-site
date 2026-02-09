@@ -1,12 +1,9 @@
-import CountdownTimer from "@/components/Countdown";
 import Info from "@/components/Info";
 import WhyAttendMOP from "@/components/Whymop";
 import SpeakerSection from "@/components/Speaker";
 import Timeline from "@/components/Timeline";
 import VenueSection from "@/components/Venue";
-import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
@@ -58,14 +55,21 @@ export default function Home() {
         </span>
         <div className="mt-6">
           <Link
+            href="https://www.eventbrite.com/e/momentum-office-party-networking-las-vegas-spring-social-tickets-1980690107430?aff=oddtdtcreator"
+            target="_blank"
+            className="btn btn-primary px-6 py-3 text-lg font-semibold text-secondary "
+          >
+            RSVP
+          </Link>
+          <Link
             href="/sponsor"
-            className="btn btn-primary px-6 py-3 text-lg font-semibold text-secondary hover:bg-secondary hover:text-primary transition-colors"
+            className="btn btn-primary px-6 py-3 text-lg font-semibold text-secondary ml-4 "
           >
             Sponsor
           </Link>
           <Link
             href="/host"
-            className="btn btn-primary px-6 py-3 text-lg font-semibold text-secondary ml-4 hover:bg-secondary hover:text-primary transition-colors"
+            className="btn btn-primary px-6 py-3 text-lg font-semibold text-secondary ml-4 "
           >
             Host
           </Link>

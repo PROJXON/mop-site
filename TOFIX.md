@@ -1,7 +1,13 @@
+Navigation
+
 - Navbar only one dropdown should be active
 - Make dropdown go away after page change
+- Update footer to interactive options
+
+Aesthetics notes:
 
 - Change color schemes
+- Background color
 - Fonts
 - Fix dark mode colors
 
@@ -12,3 +18,7 @@ Home page:
 - Change proportions on speaker picture, and figure out why it looks off
 - Change venue section button colors and add life
 - Add projxon logo to footer and update socials links
+
+Highlights page:
+
+- Mobile version

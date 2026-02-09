@@ -27,7 +27,7 @@ const VenueSection: React.FC = () => {
     time: "5pm - 9pm",
     timezone: "PST",
     address: "8460 Rozita Lee Ave, Las Vegas, NV 89113",
-    websiteUrl: "https://theassemblybykiln.com",
+    websiteUrl: "https://kiln.com/communities/las-vegas-assembly/",
     linkedinUrl: "https://linkedin.com/company/theassemblybykiln",
     instagramUrl: "https://instagram.com/theassemblybykiln",
     images: [
@@ -95,6 +95,7 @@ const VenueSection: React.FC = () => {
             href={venue.websiteUrl}
             className="btn btn-primary text-black"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Website
           </Link>

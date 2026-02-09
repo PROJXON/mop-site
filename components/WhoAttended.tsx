@@ -42,16 +42,18 @@ const WhoAttended: React.FC = () => {
 
   return (
     <section className={styles.whoAttended}>
-      <div className="text-2xl text-center mb-5">
+      <div className="text-2xl text-center mb-5 mr-2">
         Connect with
         <span className="text-rotate">
           <span>
-            <span className="bg-teal-400 text-teal-800 px-2">Founders</span>
-            <span className="bg-red-400 text-red-800 px-2">Leaders</span>
-            <span className="bg-yellow-400 text-yellow-800 px-2">
+            <span className="bg-teal-100 text-teal-800 px-1">Founders</span>
+            <span className="bg-red-100 text-red-800 px-1">Leaders</span>
+            <span className="bg-yellow-100 text-yellow-800 px-1">
               Innovators
             </span>
-            <span className="bg-blue-400 text-blue-800 px-2">Talent</span>
+            <span className="bg-blue-100 text-blue-800 px-1">
+              Rising Talents
+            </span>
           </span>
         </span>
       </div>

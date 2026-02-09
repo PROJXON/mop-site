@@ -1,6 +1,7 @@
 // app/Highlights/page.tsx
 import React from "react";
 import WhoAttended from "@/components/WhoAttended";
+import Moments from "@/components/Moments";
 
 const HighlightsPage = () => (
   <div>
@@ -74,6 +75,7 @@ const HighlightsPage = () => (
       </p>
     </div>
     <WhoAttended />
+    <Moments />
   </div>
 );
 

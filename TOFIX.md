@@ -22,3 +22,4 @@ Home page:
 Highlights page:
 
 - Mobile version
+- Auto carosel loop jumps

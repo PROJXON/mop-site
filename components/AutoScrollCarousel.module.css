@@ -1,0 +1,61 @@
+.autoScrollingCarouselHorizontal {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 40px 0;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 30px;
+  animation: slideCarouselInfinite 10s linear infinite;
+  will-change: transform;
+}
+
+.carouselTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slideCarouselInfinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 15px));
+  }
+}
+
+.carouselItem {
+  flex: 0 0 auto;
+  min-width: 350px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carouselItem {
+    min-width: 280px;
+  }
+
+  .carouselTrack {
+    gap: 20px;
+  }
+
+  @keyframes slideCarouselInfinite {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50% - 10px));
+    }
+  }
+
+  .autoScrollingCarouselHorizontal {
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselItem {
+    min-width: 250px;
+  }
+}

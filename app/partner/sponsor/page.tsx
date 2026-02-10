@@ -1,12 +1,26 @@
 import React from "react";
+import SponsorsCTA from "@/components/SponsorsCTA";
+import MopAudienceMix from "@/components/MopAudienceMix";
 
 const SponsorPage = () => (
-  <div className="container flex-3 flex mx-auto py-8 gap-5 items-center justify-center">
-    <h1 className="text-3xl font-bold mb-4">Sponsor an Event</h1>
-    <p>
-      Welcome to the Sponsor an Event page! Add your sponsorship details here.
-    </p>
-    {/* Add more content/components as needed */}
+  <div>
+    {/* CTA section */}
+    <SponsorsCTA />
+
+    {/* Who you reach: Breakdown of attendees, linkedin reach, measurement metrics */}
+    <MopAudienceMix />
+
+    {/* sponsor benefits: what sponsors get */}
+
+    {/* Sponsorship packages */}
+
+    {/* Event featueres, branding, and merch */}
+
+    {/* Add-ons */}
+
+    {/* Event services */}
+
+    {/* Link to highlights page */}
   </div>
 );
 

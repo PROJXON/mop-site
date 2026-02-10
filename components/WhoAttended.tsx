@@ -42,7 +42,7 @@ const WhoAttended: React.FC = () => {
 
   return (
     <section className={styles.whoAttended}>
-      <div className="text-2xl text-center mb-5 mr-2">
+      <h2 className="text-2xl text-center mb-5 mr-2">
         Connect with
         <span className="text-rotate">
           <span>
@@ -56,7 +56,7 @@ const WhoAttended: React.FC = () => {
             </span>
           </span>
         </span>
-      </div>
+      </h2>
       <div className={styles.attendeeGrid}>
         {categories.map((category, index) => (
           <div key={index} className={styles.attendeeCard}>

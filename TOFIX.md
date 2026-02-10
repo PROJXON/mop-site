@@ -13,6 +13,7 @@ Aesthetics notes:
 
 Home page:
 
+- Update time to make sure its accurate
 - LinkedIn svg on speaker.tsx
 - Make scrolling from hero section more smooth
 - Change proportions on speaker picture, and figure out why it looks off
@@ -23,3 +24,4 @@ Highlights page:
 
 - Mobile version
 - Auto carosel loop jumps
+- Change video buttons

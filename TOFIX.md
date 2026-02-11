@@ -2,7 +2,7 @@ Navigation
 
 - Navbar only one dropdown should be active
 - Make dropdown go away after page change
-- Update footer to interactive options
+- Update footer to interactive options for links
 
 Aesthetics notes:
 

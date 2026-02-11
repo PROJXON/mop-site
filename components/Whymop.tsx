@@ -1,12 +1,5 @@
 import React from "react";
 
-interface AccordionSectionProps {
-  title: string;
-  content: string;
-  imageUrl?: string;
-  isOpen?: boolean;
-}
-
 const WhyAttendMOP: React.FC = () => {
   return (
     <div className="py-16 px-4 lg:px-8 bg-base-200">

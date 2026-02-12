@@ -32,7 +32,7 @@ const WhyAttendMOP: React.FC = () => {
                 {/* Image Area */}
                 <div className="mt-6">
                   <img
-                    src="/placeholder-networking.jpg"
+                    src="https://picsum.photos/500/300"
                     alt="Networking at MOP"
                     className="w-full h-64 object-cover rounded-lg shadow-md"
                   />
@@ -69,7 +69,7 @@ const WhyAttendMOP: React.FC = () => {
                 {/* Image Area */}
                 <div className="mt-6">
                   <img
-                    src="/placeholder-learning.jpg"
+                    src="https://picsum.photos/500/300"
                     alt="Learning experiences at MOP"
                     className="w-full h-64 object-cover rounded-lg shadow-md"
                   />
@@ -105,7 +105,7 @@ const WhyAttendMOP: React.FC = () => {
                 {/* Image Area */}
                 <div className="mt-6">
                   <img
-                    src="/placeholder-essentials.jpg"
+                    src="https://picsum.photos/500/300"
                     alt="Event essentials"
                     className="w-full h-64 object-cover rounded-lg shadow-md"
                   />

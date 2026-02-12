@@ -52,10 +52,6 @@ next-env.d.ts
 .vscode/
 .idea/
 
-# Docker
-Dockerfile
-.dockerignore
-
 # Temporary files
 *.swp
 *.swo

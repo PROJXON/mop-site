@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  --color-primary: #ffd700;
+  --color-primary-content: #000000;
+  --color-secondary: #000000;
+  --color-primary-hover: #f7e68a;
+}

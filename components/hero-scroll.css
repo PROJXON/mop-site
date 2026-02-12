@@ -1,0 +1,81 @@
+/* Hero Section Scroll Animation */
+.hero-scroll-animate {
+  position: relative;
+  transition: opacity 0.01s ease-out;
+}
+
+.hero-scroll-animate::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.01s ease-out;
+  z-index: -1;
+}
+
+/* Parallax effect - background moves slower than scroll */
+.hero-scroll-animate[data-scroll="true"]::before {
+  transform: translateY(var(--scroll-offset, 0));
+}
+
+/* Fade effect */
+.hero-scroll-animate[data-scroll="true"] {
+  opacity: var(--scroll-opacity, 1);
+}
+
+/* Load-in animations for text content */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Staggered animation delays */
+.hero-title {
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.hero-date {
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.hero-description {
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+.hero-countdown {
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+}
+
+.hero-buttons {
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}

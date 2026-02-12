@@ -23,7 +23,7 @@ function Timeline() {
             </div>
             <div className="timeline-end timeline-box">
               <div className="text-xl font-bold">Arrivals & Welcome</div>
-              <div className="text-l italic">
+              <div className="text-xl italic">
                 {" "}
                 Check-in, Cocktails, Introductions{" "}
               </div>
@@ -116,7 +116,7 @@ function Timeline() {
             <div className="timeline-end timeline-box">
               <div className="text-xl font-bold">Round 2</div>
               <div className="text-xl italic">
-                Raffle + Speaker + Challenege 2 - "LinkedIn Linmbo"
+                Raffle + Speaker + Challenege 2 - "LinkedIn Limbo"
               </div>
             </div>
             <hr />

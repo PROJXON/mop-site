@@ -90,7 +90,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
         </div>
 
         {/* Seconds - Hidden on mobile */}
-        <div className="time-box bg-gray-100 p-4 rounded-lg min-w-17.5 shadow-md lg:p-4 lg:rounded-lg lg:shadow-md md:p-4 md:rounded-lg md:shadow-md sm:show">
+        <div className="time-box bg-gray-100 p-4 rounded-lg min-w-17.5 shadow-md lg:p-4 lg:rounded-lg lg:shadow-md md:p-4 md:rounded-lg md:shadow-md hidden sm:block">
           <span className="number block text-4xl font-bold text-gray-800 lg:text-4xl md:text-3xl">
             {timeLeft.seconds}
           </span>

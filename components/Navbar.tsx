@@ -79,7 +79,7 @@ const NavBarClean: React.FC = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow-lg bg-base-100 rounded-box w-64"
+              className="menu menu-lg dropdown-content mt-3 z-50 p-2 shadow-lg bg-base-100 rounded-box w-64"
             >
               <li>
                 <Link href="/">Home</Link>

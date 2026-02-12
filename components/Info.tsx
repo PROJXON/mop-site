@@ -1,4 +1,3 @@
-import { url } from "inspector";
 import React from "react";
 
 interface InfoProps {
@@ -16,7 +15,7 @@ const Info: React.FC<InfoProps> = ({
 }) => {
   return (
     <div className="info-section relative isolate overflow-hidden sm:py-8">
-      <h2 className="text-3xl font-bold text-grey-500 mx-auto text-center mb-5">
+      <h2 className="text-3xl font-bold text-gray-500 mx-auto text-center mb-5">
         {title}
       </h2>
       <div className="max-w-7xl mx-auto">

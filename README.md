@@ -34,8 +34,6 @@ A modern networking event website built with Next.js for Projxon.
 
 3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-4. Make changes - hot reload is enabled!
-
 ### Option 2: Local Development (Without Docker)
 
 1. Install dependencies:

@@ -18,11 +18,6 @@
   z-index: -1;
 }
 
-/* Parallax effect - background moves slower than scroll */
-.hero-scroll-animate[data-scroll="true"]::before {
-  transform: translateY(var(--scroll-offset, 0));
-}
-
 /* Fade effect */
 .hero-scroll-animate[data-scroll="true"] {
   opacity: var(--scroll-opacity, 1);

@@ -1,11 +1,8 @@
 import React from "react";
+import UpcomingSchedule from "@/components/UpcomingSchedule";
 
-const UpcomingPage = () => (
-  <div>
-    <h1 className="text-3xl font-bold mb-4">Upcoming Events</h1>
-    <p>Welcome to the Upcoming Events page! Add your event details here.</p>
-    {/* Add more content/components as needed */}
-  </div>
-);
+const UpcomingPage: React.FC = () => {
+  return <UpcomingSchedule />;
+};
 
 export default UpcomingPage;

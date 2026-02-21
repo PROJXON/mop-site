@@ -112,3 +112,7 @@ export const SponsorTiers: React.FC<{ tiers: TierProps[] }> = ({ tiers }) => {
         }}
       >
         Custom packages available · Reach out to discuss
+      </p>
+    </section>
+  );
+};

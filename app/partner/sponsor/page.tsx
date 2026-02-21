@@ -1,5 +1,5 @@
 import React from "react";
-import SponsorsCTA from "@/components/SponsorsCTA";
+import { SponsorContact, SponsorsCTA } from "@/components/SponsorsCTA";
 import MopAudienceMix from "@/components/MopAudienceMix";
 import styles from "@/components/SponsorPage.module.css";
 import { SponsorTiers } from "@/components/SponsorTiers";
@@ -29,7 +29,10 @@ interface ActivationProps {
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
-export const TIERS: TierProps[] = [
+const TIERS: TierProps[] = [
+  //
+  // SELECT PACKAGE TO HIGHLIGHT
+  //
   {
     name: "Silver",
     price: "$5,000",
@@ -41,7 +44,8 @@ export const TIERS: TierProps[] = [
       "Brand mention in event communications",
       "Exhibitor table space",
     ],
-    paymentLink: "#",
+    paymentLink:
+      "https://buy.stripe.com/aFa28s1IL30haW1aNR8Zq07?locale=en&__embed_source=buy_btn_1SLehKLJQ9d7YBw35PflC49B",
   },
   {
     name: "Gold",
@@ -56,7 +60,8 @@ export const TIERS: TierProps[] = [
       "Featured interview segment",
       "Priority logo placement",
     ],
-    paymentLink: "#",
+    paymentLink:
+      "https://buy.stripe.com/14AdRabjldEVd491dh8Zq06?locale=en&__embed_source=buy_btn_1SLefULJQ9d7YBw3ySeoStQQ",
   },
   {
     name: "Platinum",
@@ -71,11 +76,12 @@ export const TIERS: TierProps[] = [
       "Panel & workshop facilitation opportunity",
       "Dedicated email blast to full network",
     ],
-    paymentLink: "#",
+    paymentLink:
+      "https://buy.stripe.com/28E3cwevx0S93tz9JN8Zq05?locale=en&__embed_source=buy_btn_1SLebaLJQ9d7YBw3PehX4ohk",
   },
 ];
 
-export const DEMOGRAPHICS: DemographicProps[] = [
+const DEMOGRAPHICS: DemographicProps[] = [
   {
     icon: "🚀",
     label: "Young Entrepreneurs",
@@ -129,26 +135,21 @@ const ACTIVATIONS: ActivationProps[] = [
   },
 ];
 
-function GoldRule() {
-  return (
-    <div className="flex items-center gap-4 my-16">
-      <div className="flex-1 h-px bg-gradient-to-r from-transparent to-gold opacity-40" />
-      <div className="w-1.5 h-1.5 rotate-45 bg-gold opacity-60" />
-      <div className="flex-1 h-px bg-gradient-to-l from-transparent to-gold opacity-40" />
-    </div>
-  );
-}
-
 const SponsorPage = () => (
-  <div>
+  <div
+    style={{
+      background:
+        "linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%)",
+    }}
+  >
     {/* CTA section */}
     <SponsorsCTA />
-    <GoldRule />
 
     {/* Who you reach: Breakdown of attendees, linkedin reach, measurement metrics */}
     <MopAudienceMix />
 
     {/* sponsor benefits: what sponsors get */}
+    {/* <WhySponsor /> */}
 
     {/* Sponsorship packages */}
     <SponsorTiers tiers={TIERS} />
@@ -160,7 +161,11 @@ const SponsorPage = () => (
     {/* Event services */}
 
     {/* Link to highlights page */}
+    {/* Sponsor contact */}
+    <SponsorContact />
   </div>
 );
 
 export default SponsorPage;
+
+export { TIERS, DEMOGRAPHICS, ACTIVATIONS };

@@ -166,4 +166,69 @@ const SponsorsCTA = () => {
   );
 };
 
-export default SponsorsCTA;
+const SponsorContact = () => {
+  return (
+    <section style={{ textAlign: "center", padding: "4rem 0 6rem" }}>
+      <p className="section-label" style={{ marginBottom: "1.5rem" }}>
+        Ready to Partner?
+      </p>
+      <h2
+        className="font-display"
+        style={{
+          fontSize: "clamp(2.8rem, 6vw, 5rem)",
+          fontWeight: 300,
+          color: "white",
+          lineHeight: 1.1,
+          marginBottom: "1.5rem",
+        }}
+      >
+        Let's build something
+        <br />
+        <em style={{ color: "var(--gold)" }}>together.</em>
+      </h2>
+      <p
+        style={{
+          color: "rgba(255,255,255,0.4)",
+          fontSize: "1rem",
+          maxWidth: 480,
+          margin: "0 auto 3rem",
+          lineHeight: 1.7,
+        }}
+      >
+        Reach out directly and a sponsorship coordinator will respond within 24
+        hours to walk you through the right package for your brand.
+      </p>
+
+      <a
+        href="mailto:sponsorships@projxon.com"
+        className="cta-pulse"
+        style={{
+          display: "inline-block",
+          background: "var(--gold)",
+          color: "black",
+          padding: "1.1rem 3rem",
+          fontWeight: 700,
+          fontSize: "0.85rem",
+          letterSpacing: "0.2em",
+          textTransform: "uppercase",
+          textDecoration: "none",
+          marginBottom: "2rem",
+        }}
+      >
+        Contact a Sponsorship Coordinator
+      </a>
+
+      <p
+        style={{
+          color: "rgba(255,255,255,0.2)",
+          fontSize: "0.8rem",
+          letterSpacing: "0.1em",
+        }}
+      >
+        sponsorships@projxon.com
+      </p>
+    </section>
+  );
+};
+
+export { SponsorsCTA, SponsorContact };

@@ -52,7 +52,7 @@ function TierCard({ tier }: { tier: TierProps }) {
           target="_blank"
           className={`block w-full text-center py-3.5 text-sm font-bold tracking-widest uppercase transition-all duration-200 ${
             tier.highlight
-              ? "border border-white/50 text-[var(--color-surface-2)] hover:border-primary/50 hover:text-primary"
+              ? "border border-white/50 text-(--color-surface-2) hover:border-primary/50 hover:text-primary"
               : "border text-white border-white/20 hover:border-black hover:text-black"
           }`}
         >
@@ -65,7 +65,7 @@ function TierCard({ tier }: { tier: TierProps }) {
 
 export const SponsorTiers: React.FC<{ tiers: TierProps[] }> = ({ tiers }) => {
   return (
-    <section className="bg-[#242424]/[.15] py-16" id="tiers">
+    <section className="bg-[#242424]/15 py-16" id="tiers">
       <div className="text-center mb-16">
         <p className="section-label mb-4">Sponsorship Packages</p>
         <h2 className="font-display text-[clamp(2.5rem,4vw,3.5rem)] font-light text-white">

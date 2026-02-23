@@ -4,6 +4,7 @@ import MopAudienceMix from "@/components/MopAudienceMix";
 import styles from "@/components/SponsorPage.module.css";
 import { SponsorTiers } from "@/components/SponsorTiers";
 import WhySponsor from "@/components/WhySponsor";
+import ActivationsSection from "@/components/ActivationsSection";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -149,7 +150,8 @@ const SponsorPage = () => (
     <MopAudienceMix />
 
     {/* sponsor benefits: what sponsors get */}
-    {/* <WhySponsor /> */}
+    <WhySponsor />
+    <ActivationsSection />
 
     {/* Sponsorship packages */}
     <SponsorTiers tiers={TIERS} />

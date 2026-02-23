@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 const pillars = [
   {
@@ -25,40 +25,80 @@ const pillars = [
   },
 ];
 
-const WhySponsor = () => {
+function PillarCard({
+  pillar,
+  animate,
+  index,
+}: {
+  pillar: (typeof pillars)[0];
+  animate: boolean;
+  index: number;
+}) {
   return (
-    <section className="bg-[#242424]/[.15] py-20 px-4">
-      <div className="text-center mb-16">
-        <p className="section-label mb-4">Why Sponsor MOP?</p>
-        <h2 className="font-display text-white text-[clamp(2.5rem,4vw,3.5rem)] font-light">
-          Four pillars of <em className="text-[var(--gold)]">value.</em>
+    <div
+      className={`
+        bg-white/10 hover:bg-yellow-400/20 hover:shadow-lg hover:scale-105
+        transition duration-200 p-6 sm:p-8 rounded-xl
+        opacity-0 translate-y-8
+        ${animate ? "animate-fade-up" : ""}
+      `}
+      style={{
+        animationDelay: animate ? `${index * 120}ms` : undefined,
+        animationFillMode: "forwards",
+      }}
+    >
+      <span className="text-yellow-400 opacity-70 mb-5 text-2xl block">
+        {pillar.icon}
+      </span>
+      <h3 className="font-semibold text-white mb-2 tracking-wide">
+        {pillar.title}
+      </h3>
+      <p className="text-white/70 text-sm leading-relaxed">{pillar.body}</p>
+    </div>
+  );
+}
+
+const WhySponsor = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setAnimate(true);
+      },
+      { threshold: 0.2 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="bg-neutral-900/80 py-12 sm:py-20 px-4 sm:px-8"
+    >
+      <div className="text-center mb-10 sm:mb-16">
+        <p className="uppercase tracking-widest text-yellow-400/80 text-xs font-semibold mb-4">
+          Why Sponsor MOP?
+        </p>
+        <h2 className="font-display text-white text-3xl sm:text-4xl md:text-5xl font-light">
+          Four pillars of <em className="text-yellow-400 not-italic">value.</em>
         </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[rgba(255,255,255,0.07)] mx-32 my-8 rounded-xl overflow-hidden">
-        {pillars.map((pillar) => (
-          <div
+      <div
+        className="
+        grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 
+        bg-white/5 p-10 sm:p-6 rounded-xl  
+      "
+      >
+        {pillars.map((pillar, i) => (
+          <PillarCard
             key={pillar.title}
-            className="
-  bg-[var(--color-surface)] 
-  hover:bg-[#e6b800] 
-  hover:shadow-lg 
-  hover:scale-105 
-  transition 
-  duration-200 
-  p-10 
-  rounded-lg
-"
-          >
-            <span className="text-[var(--gold)] opacity-70 mb-5 text-2xl block">
-              {pillar.icon}
-            </span>
-            <h3 className="font-semibold text-white mb-3 tracking-wide">
-              {pillar.title}
-            </h3>
-            <p className="text-white50 text-sm leading-relaxed">
-              {pillar.body}
-            </p>
-          </div>
+            pillar={pillar}
+            animate={animate}
+            index={i}
+          />
         ))}
       </div>
     </section>

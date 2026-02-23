@@ -5,7 +5,7 @@ import styles from "./SponsorPage.module.css";
 const SponsorsCTA = () => {
   return (
     <section
-      className={styles.heroGlow}
+      className="hero-glow"
       style={{
         minHeight: "100vh",
         display: "flex",
@@ -14,7 +14,6 @@ const SponsorsCTA = () => {
         justifyContent: "center",
         textAlign: "center",
         padding: "8rem 2rem 4rem",
-        background: "linear-gradient(to bottom, black, gold)",
         position: "relative",
       }}
     >
@@ -24,8 +23,6 @@ const SponsorsCTA = () => {
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
-          backgroundImage:
-            "linear-gradient(rgba(212,175,55,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.03) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
         }}
       />
@@ -35,11 +32,11 @@ const SponsorsCTA = () => {
           className="section-label animate-fade-up"
           style={{
             marginBottom: "1.5rem",
-            color: "rgba(255,255,255,0.5)",
             fontWeight: 500,
             letterSpacing: "0.2em",
             textTransform: "uppercase",
             fontSize: "0.8rem",
+            color: "var(--color-primary-active)",
           }}
         >
           Las Vegas, NV · Momentum Office Party
@@ -50,20 +47,22 @@ const SponsorsCTA = () => {
             fontSize: "clamp(3.5rem, 8vw, 7rem)",
             lineHeight: 1,
             fontWeight: 300,
-            color: "white",
+            color: "var(--color-primary-content)",
             letterSpacing: "-0.01em",
             marginBottom: "1.5rem",
           }}
         >
           Sponsor the
           <br />
-          <span style={{ color: "var(--gold)" }}>Movement.</span>
+          <span style={{ color: "var(--color-primary-active)" }}>
+            Movement.
+          </span>
         </h1>
         <p
           className="animate-fade-up delay-2"
           style={{
             fontSize: "1.1rem",
-            color: "rgba(255,255,255,0.5)",
+            color: "var(--color-primary-content)",
             lineHeight: 1.7,
             maxWidth: 560,
             margin: "0 auto 3rem",
@@ -102,8 +101,8 @@ const SponsorsCTA = () => {
           <a
             href="mailto:sponsorships@projxon.com"
             style={{
-              border: "1px solid rgba(255,255,255,0.2)",
-              color: "rgba(255,255,255,0.7)",
+              border: "var(--color-secondary) 2px solid",
+              color: "var(--color-primary-content)",
               padding: "1rem 2.5rem",
               fontWeight: 500,
               fontSize: "0.8rem",
@@ -127,7 +126,7 @@ const SponsorsCTA = () => {
             justifyContent: "center",
             marginTop: "5rem",
             padding: "2rem",
-            borderTop: "1px solid rgba(212,175,55,0.15)",
+            borderTop: "1px solid var(--color-surface)",
             flexWrap: "wrap",
           }}
         >
@@ -141,7 +140,7 @@ const SponsorsCTA = () => {
                 className="font-display "
                 style={{
                   fontSize: "2.5rem",
-                  color: "white",
+                  color: "black",
                   lineHeight: 1,
                 }}
               >
@@ -168,7 +167,13 @@ const SponsorsCTA = () => {
 
 const SponsorContact = () => {
   return (
-    <section style={{ textAlign: "center", padding: "4rem 0 6rem" }}>
+    <section
+      style={{
+        textAlign: "center",
+        padding: "4rem 0 6rem",
+        color: "var(--color-surface-2)",
+      }}
+    >
       <p className="section-label" style={{ marginBottom: "1.5rem" }}>
         Ready to Partner?
       </p>
@@ -177,18 +182,17 @@ const SponsorContact = () => {
         style={{
           fontSize: "clamp(2.8rem, 6vw, 5rem)",
           fontWeight: 300,
-          color: "white",
+          color: "black",
           lineHeight: 1.1,
           marginBottom: "1.5rem",
         }}
       >
         Let's build something
         <br />
-        <em style={{ color: "var(--gold)" }}>together.</em>
+        <em style={{ color: "var(--color-primary-active)" }}>together.</em>
       </h2>
       <p
         style={{
-          color: "rgba(255,255,255,0.4)",
           fontSize: "1rem",
           maxWidth: 480,
           margin: "0 auto 3rem",
@@ -204,8 +208,8 @@ const SponsorContact = () => {
         className="cta-pulse"
         style={{
           display: "inline-block",
-          background: "var(--gold)",
-          color: "black",
+          background: "black",
+          color: "var(--color-primary)",
           padding: "1.1rem 3rem",
           fontWeight: 700,
           fontSize: "0.85rem",
@@ -220,7 +224,6 @@ const SponsorContact = () => {
 
       <p
         style={{
-          color: "rgba(255,255,255,0.2)",
           fontSize: "0.8rem",
           letterSpacing: "0.1em",
         }}

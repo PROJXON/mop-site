@@ -3,6 +3,7 @@ import { SponsorContact, SponsorsCTA } from "@/components/SponsorsCTA";
 import MopAudienceMix from "@/components/MopAudienceMix";
 import styles from "@/components/SponsorPage.module.css";
 import { SponsorTiers } from "@/components/SponsorTiers";
+import WhySponsor from "@/components/WhySponsor";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -138,8 +139,7 @@ const ACTIVATIONS: ActivationProps[] = [
 const SponsorPage = () => (
   <div
     style={{
-      background:
-        "linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%)",
+      background: "var(--color-background-2)",
     }}
   >
     {/* CTA section */}
@@ -166,6 +166,6 @@ const SponsorPage = () => (
   </div>
 );
 
-export default SponsorPage;
-
 export { TIERS, DEMOGRAPHICS, ACTIVATIONS };
+
+export default SponsorPage;

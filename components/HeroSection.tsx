@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import "./hero-scroll.css";
+import "./HeroScroll.css";
 import CountdownTimer from "./Countdown";
 import Link from "next/link";
 

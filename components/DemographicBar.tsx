@@ -35,22 +35,24 @@ export default function DemographicBar({
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <span className="text-2xl">{demo.icon}</span>
-          <span className="text-white font-semibold tracking-wide">
+          <span className="text-[var(--color-primary-hover)] font-semibold tracking-wide">
             {demo.label}
           </span>
         </div>
-        <span className="font-display text-3xl text-gold">{demo.percent}</span>
+        <span className="font-display text-3xl text-black">{demo.percent}</span>
       </div>
       <div className="h-px bg-white/10 relative overflow-hidden">
         <div
-          className="absolute inset-y-0 left-0 bg-gradient-to-r from-gold/60 to-gold transition-all duration-1000 ease-out"
+          className="text-[var(--color-primary-hover)] absolute inset-y-0 left-0 transition-all duration-1000 ease-out"
           style={{
             width: visible ? demo.percent : "0%",
             transitionDelay: `${index * 150}ms`,
           }}
         />
       </div>
-      <p className="text-white/40 text-sm">{demo.description}</p>
+      <p className="text-[var(--color-surface-2)] text-sm">
+        {demo.description}
+      </p>
     </div>
   );
 }

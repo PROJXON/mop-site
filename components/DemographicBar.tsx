@@ -31,11 +31,24 @@ export default function DemographicBar({
   }, []);
 
   return (
-    <div ref={ref} className="space-y-3">
+    <div
+      ref={ref}
+      className={`
+        bg-white/10 hover:bg-yellow-400/20 hover:shadow-lg hover:scale-105
+        transition duration-200 p-6 sm:p-8 rounded-xl
+        opacity-0 translate-y-8
+        ${visible ? "animate-fade-up" : ""}
+        space-y-3 lg:text-2xl
+      `}
+      style={{
+        animationDelay: visible ? `${index * 120}ms` : undefined,
+        animationFillMode: "forwards",
+      }}
+    >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <span className="text-2xl">{demo.icon}</span>
-          <span className="text-[var(--color-primary-hover)] font-semibold tracking-wide">
+          <span className="text-yellow-400 font-semibold tracking-wide">
             {demo.label}
           </span>
         </div>
@@ -43,14 +56,14 @@ export default function DemographicBar({
       </div>
       <div className="h-px bg-white/10 relative overflow-hidden">
         <div
-          className="text-[var(--color-primary-hover)] absolute inset-y-0 left-0 transition-all duration-1000 ease-out"
+          className="bg-yellow-400 absolute inset-y-0 left-0 transition-all duration-1000 ease-out"
           style={{
             width: visible ? demo.percent : "0%",
             transitionDelay: `${index * 150}ms`,
           }}
         />
       </div>
-      <p className="text-[var(--color-surface-2)] text-sm">
+      <p className="text-white/70 text-sm leading-relaxed">
         {demo.description}
       </p>
     </div>

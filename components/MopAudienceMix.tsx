@@ -12,8 +12,8 @@ interface DemographicProps {
 
 const MopAudienceMix: React.FC = () => {
   return (
-    <section className="bg-[#000000]/[.2] p-2" id="audience">
-      <div className="card mx-32 my-8 px-16 py-12 grid grid-cols-2 gap-24 items-center text-[var(--color-primary-content)] bg-[#000000]/[.15]">
+    <section className="bg-#000000/.2 p-2 animate-fadeIn" id="audience">
+      <div className="max-w-5xl mx-auto flex flex-col gap-12 py-16 px-4 md:px-5 lg:max-w-10/12">
         <div>
           <p
             className="section-label mb-1"

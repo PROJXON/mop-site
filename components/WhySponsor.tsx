@@ -76,9 +76,9 @@ const WhySponsor = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-neutral-900/80 py-12 sm:py-20 px-4 sm:px-8"
+      className="bg-neutral-900/80 pt-6 pb-12 sm:pb-16 px-4 sm:px-8"
     >
-      <div className="text-center mb-10 sm:mb-16">
+      <div className="text-center mb-2">
         <p className="uppercase tracking-widest text-yellow-400/80 text-xs font-semibold mb-4">
           Why Sponsor MOP?
         </p>
@@ -86,12 +86,7 @@ const WhySponsor = () => {
           Four pillars of <em className="text-yellow-400 not-italic">value.</em>
         </h2>
       </div>
-      <div
-        className="
-        grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 
-        bg-white/5 p-10 sm:p-6 rounded-xl  
-      "
-      >
+      <div className="grid gap-6 sm:gap-8 md:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-auto">
         {pillars.map((pillar, i) => (
           <PillarCard
             key={pillar.title}

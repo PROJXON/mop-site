@@ -22,7 +22,7 @@ const SponsorsCTA = () => {
         position: "relative",
       }}
     >
-      <div className="card bg-white px-30 py-10 opacity-90">
+      <div className="card bg-white  my-5 lg:px-30 py-10 opacity-90">
         {/* Grid lines */}
         <div
           style={{

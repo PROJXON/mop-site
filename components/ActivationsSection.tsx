@@ -97,12 +97,8 @@ export default function ActivationsSection() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="mx-auto max-w-6xl px-4 sm:px-8 py-12 sm:py-20"
-    >
+    <section ref={sectionRef} className="mx-auto px-4 sm:px-8 py-12 sm:pb-20">
       <div className="text-center mb-10 sm:mb-16">
-        <p className="section-label my-3 sm:my-4">Activation Menu</p>
         <h2 className="font-display font-light text-white text-3xl sm:text-4xl md:text-5xl">
           How your brand <em className="text-primary not-italic">shows up.</em>
         </h2>

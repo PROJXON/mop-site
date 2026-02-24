@@ -30,3 +30,5 @@ TODO:
 
 - Add testimonial videos
 - Add the video marketting sent
+- Robots.txt and SEO
+- Add metadata to pages

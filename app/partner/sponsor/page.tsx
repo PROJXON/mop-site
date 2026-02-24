@@ -151,6 +151,7 @@ const SponsorPage = () => (
 
     {/* sponsor benefits: what sponsors get */}
     <WhySponsor />
+
     <ActivationsSection />
 
     {/* Sponsorship packages */}

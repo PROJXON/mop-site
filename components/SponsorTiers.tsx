@@ -15,7 +15,7 @@ function TierCard({ tier }: { tier: TierProps }) {
       className={`relative flex flex-col rounded-sm border transition-all duration-300 hover:-translate-y-1 ${
         tier.highlight
           ? "border-white/50 bg-gold10 shadow-[0_0_40px_rgba(212,175,55,0.15)]"
-          : "border-white10 bg-white3 hover:border-white20"
+          : "border-white/10 bg-white3 hover:border-white/70"
       }`}
     >
       {tier.badge && (
@@ -28,8 +28,8 @@ function TierCard({ tier }: { tier: TierProps }) {
       <div className="p-8 border-b border-white10">
         <p
           className={`text-xs tracking-[0.3em] uppercase mb-3 ${
-            tier.highlight ? "text-gold" : "text-white40"
-          }`}
+            tier.highlight ? "text-primary/70" : "text-white40"
+          } lg:text-sm`}
         >
           {tier.name}
         </p>
@@ -52,8 +52,8 @@ function TierCard({ tier }: { tier: TierProps }) {
           target="_blank"
           className={`block w-full text-center py-3.5 text-sm font-bold tracking-widest uppercase transition-all duration-200 ${
             tier.highlight
-              ? "border border-white/50 text-(--color-surface-2) hover:border-primary/50 hover:text-primary"
-              : "border text-white border-white/20 hover:border-black hover:text-black"
+              ? "border border-white/50 text-white hover:border-primary/50 hover:text-primary"
+              : "border text-white border-white/20 hover:border-primary/50 hover:text-primary"
           }`}
         >
           Secure This Tier
@@ -72,7 +72,7 @@ export const SponsorTiers: React.FC<{ tiers: TierProps[] }> = ({ tiers }) => {
           Choose your <em className="text-gold">tier.</em>
         </h2>
       </div>
-      <div className="mx-32 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
+      <div className="mx-5 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
         {TIERS.map((tier) => (
           <TierCard key={tier.name} tier={tier} />
         ))}

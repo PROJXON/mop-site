@@ -1,7 +1,6 @@
 /* Hero Section Scroll Animation */
 .hero-scroll-animate {
   position: relative;
-  transition: opacity 0.01s ease-out;
 }
 
 .hero-scroll-animate::before {

@@ -91,13 +91,13 @@ export default function Home() {
             RSVP
           </Link>
           <Link
-            href="/sponsor"
+            href="/partner/sponsor"
             className="btn btn-primary px-6 py-3 text-lg font-semibold text-secondary ml-4 "
           >
             Sponsor
           </Link>
           <Link
-            href="/host"
+            href="/partner/host"
             className="btn btn-primary px-6 py-3 text-lg font-semibold text-secondary ml-4 "
           >
             Host

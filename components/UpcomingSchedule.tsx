@@ -1,4 +1,4 @@
- "use client";
+"use client";
 import React, { useState } from "react";
 
 type SocialLink = {
@@ -24,15 +24,13 @@ type YearSection = {
   cities: CityBlock[];
 };
 
-
 const UPCOMING_SCHEDULE: YearSection[] = [
   {
     year: "2026",
     cities: [
       {
         city: "Las Vegas",
-        imageUrl:
-          "/images/upcoming/klinoffice.png",
+        imageUrl: "/images/upcoming/klinoffice.png",
         events: [
           {
             title: `"Outdoor Mixer!"`,
@@ -40,9 +38,18 @@ const UPCOMING_SCHEDULE: YearSection[] = [
             sortKey: "2026-03-07",
             social: [
               { label: "Link", href: "https://kiln.com/" },
-              { label: "Instagram", href: "https://www.instagram.com/kiln.co/" },
-              { label: "Facebook", href: "https://www.facebook.com/gatheratkiln/" },
-              { label: "LinkedIn", href: "https://www.linkedin.com/company/gatheratkiln/posts/?feedView=all" },
+              {
+                label: "Instagram",
+                href: "https://www.instagram.com/kiln.co/",
+              },
+              {
+                label: "Facebook",
+                href: "https://www.facebook.com/gatheratkiln/",
+              },
+              {
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/company/gatheratkiln/posts/?feedView=all",
+              },
             ],
           },
           {
@@ -53,15 +60,17 @@ const UPCOMING_SCHEDULE: YearSection[] = [
               { label: "Link", href: "https://www.wework.com/" },
               { label: "Instagram", href: "https://www.instagram.com/wework" },
               { label: "Facebook", href: "https://www.facebook.com/WeWork/" },
-              { label: "LinkedIn", href: "https://www.linkedin.com/company/wework/posts/?feedView=all" },
+              {
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/company/wework/posts/?feedView=all",
+              },
             ],
           },
         ],
       },
       {
         city: "Chicago",
-        imageUrl:
-          "/images/upcoming/wework.png",
+        imageUrl: "/images/upcoming/wework.png",
         events: [
           {
             title: `"Community Mixer!"`,
@@ -71,15 +80,17 @@ const UPCOMING_SCHEDULE: YearSection[] = [
               { label: "Link", href: "https://www.wework.com/" },
               { label: "Instagram", href: "https://www.instagram.com/wework" },
               { label: "Facebook", href: "https://www.facebook.com/WeWork/" },
-              { label: "LinkedIn", href: "https://www.linkedin.com/company/wework/posts/?feedView=all" },
+              {
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/company/wework/posts/?feedView=all",
+              },
             ],
           },
         ],
       },
       {
         city: "San Francisco",
-        imageUrl:
-          "/images/upcoming/wework.png",
+        imageUrl: "/images/upcoming/wework.png",
         events: [
           {
             title: `"Community Mixer!"`,
@@ -87,9 +98,18 @@ const UPCOMING_SCHEDULE: YearSection[] = [
             sortKey: "2026-08-08",
             social: [
               { label: "Link", href: "https://kiln.com/" },
-              { label: "Instagram", href: "https://www.instagram.com/kiln.co/" },
-              { label: "Facebook", href: "https://www.facebook.com/gatheratkiln/" },
-              { label: "LinkedIn", href: "https://www.linkedin.com/company/gatheratkiln/posts/?feedView=all" },
+              {
+                label: "Instagram",
+                href: "https://www.instagram.com/kiln.co/",
+              },
+              {
+                label: "Facebook",
+                href: "https://www.facebook.com/gatheratkiln/",
+              },
+              {
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/company/gatheratkiln/posts/?feedView=all",
+              },
             ],
           },
         ],
@@ -101,8 +121,7 @@ const UPCOMING_SCHEDULE: YearSection[] = [
     cities: [
       {
         city: "Las Vegas",
-        imageUrl:
-          "/images/upcoming/dummy1.png",
+        imageUrl: "/images/upcoming/dummy1.png",
         events: [
           {
             date: "March, 2027",
@@ -112,8 +131,7 @@ const UPCOMING_SCHEDULE: YearSection[] = [
       },
       {
         city: "Los Angeles",
-        imageUrl:
-          "/images/upcoming/dummy2.png",
+        imageUrl: "/images/upcoming/dummy2.png",
         events: [
           {
             date: "June, 2027",
@@ -123,8 +141,7 @@ const UPCOMING_SCHEDULE: YearSection[] = [
       },
       {
         city: "Seattle",
-        imageUrl:
-          "/images/upcoming/dummy3.png",
+        imageUrl: "/images/upcoming/dummy3.png",
         events: [
           {
             date: "August, 2027",
@@ -139,18 +156,15 @@ const UPCOMING_SCHEDULE: YearSection[] = [
     cities: [
       {
         city: "Las Vegas",
-        imageUrl:
-          "/images/upcoming/dummy1.png",
+        imageUrl: "/images/upcoming/dummy1.png",
       },
       {
         city: "New York",
-        imageUrl:
-          "/images/upcoming/dummy2.png",
+        imageUrl: "/images/upcoming/dummy2.png",
       },
       {
         city: "San Diego",
-        imageUrl:
-          "/images/upcoming/dummy3.png",
+        imageUrl: "/images/upcoming/dummy3.png",
       },
     ],
   },
@@ -159,18 +173,15 @@ const UPCOMING_SCHEDULE: YearSection[] = [
     cities: [
       {
         city: "London",
-        imageUrl:
-          "/images/upcoming/dummy1.png",
+        imageUrl: "/images/upcoming/dummy1.png",
       },
       {
         city: "Athens",
-        imageUrl:
-          "/images/upcoming/dummy2.png",
+        imageUrl: "/images/upcoming/dummy2.png",
       },
       {
         city: "Mumbai",
-        imageUrl:
-          "/images/upcoming/dummy3.png",
+        imageUrl: "/images/upcoming/dummy3.png",
       },
     ],
   },
@@ -243,7 +254,9 @@ const UpcomingSchedule: React.FC = () => {
                 <div className="grid gap-6 md:grid-cols-2">
                   {entries.map(({ city, event }, idx) => (
                     <article
-                      key={`${activeSection.year}-${city.city}-${event?.sortKey ?? idx}`}
+                      key={`${activeSection.year}-${city.city}-${
+                        event?.sortKey ?? idx
+                      }`}
                       className="card bg-base-200 shadow-sm border border-base-300/60"
                     >
                       {city.imageUrl && (
@@ -322,4 +335,3 @@ const UpcomingSchedule: React.FC = () => {
 };
 
 export default UpcomingSchedule;
-

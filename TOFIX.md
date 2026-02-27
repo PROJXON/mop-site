@@ -25,3 +25,10 @@ Highlights page:
 - Mobile version
 - Auto carosel loop jumps
 - Change video buttons
+
+TODO:
+
+- Add testimonial videos
+- Add the video marketting sent
+- Robots.txt and SEO
+- Add metadata to pages

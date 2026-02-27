@@ -1,78 +1,72 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import "./HeroScroll.css";
 import CountdownTimer from "./Countdown";
 import Link from "next/link";
 
 export default function HeroSection() {
-  const heroRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!heroRef.current) return;
-
-      const scrollPosition = window.scrollY;
-      const heroHeight = heroRef.current.offsetHeight;
-
-      // Calculate scroll progress (0 to 1)
-      const scrollProgress = Math.min(scrollPosition / heroHeight, 1);
-
-      // Parallax effect: move background down at 50% of scroll speed
-      const parallaxOffset = scrollPosition * 0.5;
-
-      // Fade out effect: opacity from 1 to 0
-      const opacity = 1 - scrollProgress;
-
-      // TODO: jump to next section after scroll progress is 90%
-
-      // Apply CSS variables
-      // heroRef.current.style.setProperty(
-      //   "--scroll-offset",
-      //   `${parallaxOffset}px`
-      // );
-      heroRef.current.style.setProperty("--scroll-opacity", opacity.toString());
-      heroRef.current.setAttribute("data-scroll", "true");
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial call
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <section
-      ref={heroRef}
-      className="hero hero-scroll-animate h-[85vh] bg-center bg-cover"
+      className="relative h-[90vh] min-h-[600px] bg-center bg-cover flex items-center justify-center"
       style={{ backgroundImage: "url(/hero-bg.jpeg)" }}
     >
-      <div className="hero-overlay bg-opacity-60"></div>
-      <div className="hero-content text-center text-neutral-content">
-        <div className="max-w-2xl">
-          <h1 className="hero-title mb-5 text-6xl font-bold">
-            Momentum Office Party 2026
-          </h1>
-          <p className="hero-date mb-3 text-xl">March 7th, 2026 • 5:00 PM</p>
-          <p className="hero-description mb-8 text-3xl italic opacity-90">
-            Elevate Your Network
-          </p>
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
 
-          {/* Countdown Timer */}
-          <div className="hero-countdown ">
-            <CountdownTimer targetDate="Mar 07, 2026 20:00:00" />
-          </div>
+      {/* Gold top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#D4AF37]" />
 
-          <div className="hero-buttons mt-8 flex gap-4 justify-center">
-            <Link
-              href="https://www.eventbrite.com/e/momentum-office-party-networking-las-vegas-spring-social-tickets-1980690107430?aff=oddtdtcreator"
-              className="btn btn-primary text-black btn-lg"
-              target="_blank"
-            >
-              RSVP Now
-            </Link>
-          </div>
+      {/* Content */}
+      <div className="relative z-10 text-center text-white px-6 max-w-3xl mx-auto">
+        {/* Eyebrow label */}
+        <p
+          className="text-[#D4AF37] text-sm uppercase tracking-[0.25em] mb-6"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          Projxon Presents
+        </p>
+
+        <h1
+          className="text-5xl sm:text-6xl lg:text-7xl text-white mb-4 leading-tight"
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
+          Momentum Office Party
+        </h1>
+
+        {/* Gold divider */}
+        <div className="flex items-center justify-center gap-3 my-6">
+          <div className="w-12 h-[1px] bg-[#D4AF37]" />
+          <div className="w-2 h-2 rounded-full bg-[#D4AF37]" />
+          <div className="w-12 h-[1px] bg-[#D4AF37]" />
         </div>
+
+        <p
+          className="text-2xl sm:text-3xl italic text-white/90 mb-3"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          Elevate Your Network
+        </p>
+
+        <p
+          className="text-base text-white/60 mb-10 uppercase tracking-widest"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          March 7th, 2026 &bull; 5:00 PM &bull; Las Vegas, NV
+        </p>
+
+        {/* Countdown */}
+        <div className="mb-10">
+          <CountdownTimer targetDate="Mar 07, 2026 20:00:00" />
+        </div>
+
+        {/* CTA */}
+        <Link
+          href="https://www.eventbrite.com/e/momentum-office-party-networking-las-vegas-spring-social-tickets-1980690107430?aff=oddtdtcreator"
+          target="_blank"
+          className="inline-block px-10 py-4 bg-[#D4AF37] text-black text-sm font-bold uppercase tracking-[0.15em] rounded hover:bg-[#c9a227] hover:scale-105 transition-all duration-300 shadow-lg shadow-black/30"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          RSVP Now
+        </Link>
       </div>
     </section>
   );

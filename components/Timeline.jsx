@@ -2,18 +2,18 @@ import React from "react";
 
 function Timeline() {
   return (
-    <div>
-      <div className="text-center my-12">
+    <section id="timeline" className="bg-(--color-background-2)/40">
+      <div className="text-center my-12 pt-5">
         <h2 className="text-4xl font-bold mb-4">Event Timeline</h2>
         <p className="text-lg text-gray-600">
-          A sneak peek into the exciting activities planned for the day
+          An outline of the exciting activities planned for the day
         </p>
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center pb-5">
         <ul className="timeline timeline-vertical lg:timeline-vertical">
           <li>
             <div className="timeline-start flex gap-2">
-              <div className="text-xl font-bold">5:00 PM - 6:00 PM</div>
+              <div className="text-xl font-bold">5:00 PM</div>
               <div className="text-xl italic">Doors Open</div>
             </div>
             <div className="timeline-middle">
@@ -179,7 +179,7 @@ function Timeline() {
           <li>
             <hr />
             <div className="timeline-start flex gap-2">
-              <div className="text-xl font-bold">8:50 PM - 9:00 PM</div>
+              <div className="text-xl font-bold">9:00 PM</div>
               <div className="text-xl italic">Doors Close</div>
             </div>
             <div className="timeline-middle">
@@ -197,7 +197,7 @@ function Timeline() {
           </li>
         </ul>
       </div>
-    </div>
+    </section>
   );
 }
 

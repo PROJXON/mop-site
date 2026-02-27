@@ -5,11 +5,13 @@ import Timeline from "@/components/Timeline";
 import VenueSection from "@/components/Venue";
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
+import { EventDetails } from "@/components/EventDetail";
 
 export default function Home() {
   return (
     <div>
       <HeroSection />
+      <EventDetails />
 
       <Info
         imageUrl="/mop-base.png"
@@ -52,17 +54,6 @@ export default function Home() {
             linkedinUrl: "https://www.linkedin.com/in/janedoe",
           }}
         />
-        <SpeakerSection
-          speaker={{
-            name: "Jane Doe",
-            title: "Chief Innovation Officer",
-            company: "TechCorp Inc.",
-            description:
-              "Jane Doe is a visionary leader with over 15 years of experience in driving innovation and growth in the tech industry. As Chief Innovation Officer at TechCorp Inc., she has spearheaded numerous successful initiatives that have transformed the company's product offerings and market presence. Jane is passionate about fostering a culture of creativity and collaboration, and she is dedicated to helping organizations unlock their full potential through strategic innovation.",
-            imageUrl: "/speakers/PhelanM.jpeg",
-            linkedinUrl: "https://www.linkedin.com/in/janedoe",
-          }}
-        />
       </div>
 
       {/* The activity line up */}
@@ -71,7 +62,7 @@ export default function Home() {
       <VenueSection />
 
       {/* Be a part of the Experience */}
-      <div className="flex flex-col items-center justify-center py-10">
+      <div className="flex flex-col items-center justify-center py-10 bg-black text-white">
         <h2 className="text-3xl font-bold mb-1">Be a Part of the Experience</h2>
         <p className="text-lg mb-6 text-center max-w-2xl italic">
           Elevate the Experience - Join us in shaping the future of networking.

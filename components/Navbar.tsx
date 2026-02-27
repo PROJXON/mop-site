@@ -113,7 +113,7 @@ const NavBarClean: React.FC = () => {
           <Link
             href="https://www.eventbrite.com/e/momentum-office-party-networking-las-vegas-spring-social-tickets-1980690107430?aff=oddtdtcreator"
             target="_blank"
-            className="btn btn-primary btn-sm lg:hidden"
+            className="btn btn-[#D4AF37] btn-sm lg:hidden"
           >
             RSVP
           </Link>

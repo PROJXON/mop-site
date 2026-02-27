@@ -24,11 +24,13 @@ export default function HeroSection() {
       // Fade out effect: opacity from 1 to 0
       const opacity = 1 - scrollProgress;
 
+      // TODO: jump to next section after scroll progress is 90%
+
       // Apply CSS variables
-      heroRef.current.style.setProperty(
-        "--scroll-offset",
-        `${parallaxOffset}px`
-      );
+      // heroRef.current.style.setProperty(
+      //   "--scroll-offset",
+      //   `${parallaxOffset}px`
+      // );
       heroRef.current.style.setProperty("--scroll-opacity", opacity.toString());
       heroRef.current.setAttribute("data-scroll", "true");
     };
@@ -51,14 +53,14 @@ export default function HeroSection() {
           <h1 className="hero-title mb-5 text-6xl font-bold">
             Momentum Office Party 2026
           </h1>
-          <p className="hero-date mb-3 text-xl">March 7th, 2026 • 3:00 PM</p>
+          <p className="hero-date mb-3 text-xl">March 7th, 2026 • 5:00 PM</p>
           <p className="hero-description mb-8 text-3xl italic opacity-90">
             Elevate Your Network
           </p>
 
           {/* Countdown Timer */}
           <div className="hero-countdown ">
-            <CountdownTimer targetDate="Mar 07, 2026 15:00:00" />
+            <CountdownTimer targetDate="Mar 07, 2026 20:00:00" />
           </div>
 
           <div className="hero-buttons mt-8 flex gap-4 justify-center">

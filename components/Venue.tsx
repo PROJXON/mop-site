@@ -31,12 +31,12 @@ const VenueSection: React.FC = () => {
     linkedinUrl: "https://linkedin.com/company/theassemblybykiln",
     instagramUrl: "https://instagram.com/theassemblybykiln",
     images: [
-      { url: "/Assembly Bar Area.jpg", alt: "Bar Area" },
-      { url: "/Assembly Bar.jpg", alt: "Bar" },
-      { url: "/Assembly Courtyard Angle.jpg", alt: "Courtyard Alt" },
-      { url: "/Assembly Courtyard.jpg", alt: "Courtyard" },
-      { url: "/Assembly High tops.jpg", alt: "High tops" },
-      { url: "/Assembly Rount Tops.jpg", alt: "Rount Tops" },
+      { url: "/Venue/Assembly Bar Area.jpg", alt: "Bar Area" },
+      { url: "/Venue/Assembly Bar.jpg", alt: "Bar" },
+      { url: "/Venue/Assembly Courtyard Angle.jpg", alt: "Courtyard Alt" },
+      { url: "/Venue/Assembly Courtyard.jpg", alt: "Courtyard" },
+      { url: "/Venue/Assembly High tops.jpg", alt: "High tops" },
+      { url: "/Venue/Assembly Rount Tops.jpg", alt: "Rount Tops" },
     ],
   };
 

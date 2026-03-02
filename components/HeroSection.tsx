@@ -6,8 +6,8 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <section
-      className="relative h-[90vh] min-h-[600px] bg-center bg-cover flex items-center justify-center"
-      style={{ backgroundImage: "url(/hero-bg.jpeg)" }}
+      className="relative h-[70vh] min-h-[600px] bg-center bg-cover flex items-center justify-center"
+      style={{ backgroundImage: "url(/hero.jpg)" }}
     >
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />

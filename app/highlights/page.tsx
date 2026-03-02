@@ -2,9 +2,11 @@
 import React from "react";
 import WhoAttended from "@/components/WhoAttended";
 import Moments from "@/components/Moments";
+import HighlightsHero from "@/components/HighlightsHero";
 
 const HighlightsPage = () => (
   <div>
+    <HighlightsHero />
     <div className="container flex-3 flex mx-auto py-8 gap-5 items-center justify-center ">
       <h1 className="text-3xl font-bold mb-4 flex-1">
         High-Energy, Professional Atmosphere

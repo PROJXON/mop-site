@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap");
 
 @import "tailwindcss";
 @plugin "daisyui" {
@@ -17,7 +17,7 @@
   --color-surface: #1a1a1a;
   --color-surface-2: #242424;
   --color-border: #2e2e2e;
-  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Jost", sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
 }
 
@@ -43,7 +43,7 @@ h6 {
 }
 
 .font-display {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Jost", sans-serif;
 }
 
 .text-gold {

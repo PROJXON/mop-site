@@ -46,12 +46,10 @@ const WhoAttended: React.FC = () => {
         Connect with
         <span className="text-rotate">
           <span>
-            <span className="bg-teal-100 text-teal-800 px-1">Founders</span>
-            <span className="bg-red-100 text-red-800 px-1">Leaders</span>
-            <span className="bg-yellow-100 text-yellow-800 px-1">
-              Innovators
-            </span>
-            <span className="bg-blue-100 text-blue-800 px-1">
+            <span className="bg-primary/15 text-primary px-1">Founders</span>
+            <span className="bg-primary/15 text-primary px-1">Leaders</span>
+            <span className="bg-primary/15 text-primary px-1">Innovators</span>
+            <span className="bg-primary/15 text-primary px-1">
               Rising Talents
             </span>
           </span>

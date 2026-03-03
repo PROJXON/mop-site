@@ -3,6 +3,7 @@ import Link from "next/link";
 
 interface Speaker {
   name: string;
+  role: string;
   title: string;
   company: string;
   description: string;
@@ -36,6 +37,10 @@ const SpeakerSection: React.FC<SpeakerSectionProps> = ({ speaker }) => {
           <div className="lg:w-3/5 space-y-6">
             <div>
               <h3 className="text-4xl font-bold mb-2">{speaker.name}</h3>
+              {/* role */}
+              <p className="text-2xl uppercase tracking-widest text-black/50 mb-1">
+                {speaker.role}
+              </p>
               <p className="text-xl text-primary font-semibold">
                 {speaker.title}
               </p>

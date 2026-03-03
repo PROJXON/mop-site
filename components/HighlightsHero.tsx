@@ -63,7 +63,7 @@ export default function HighlightsHero({
               color: "white",
             }}
           >
-            See what
+            See what the
             <br />
             <em
               style={{
@@ -71,7 +71,7 @@ export default function HighlightsHero({
                 fontStyle: "italic",
               }}
             >
-              MOP
+              Office Party
             </em>{" "}
             is about.
           </h1>

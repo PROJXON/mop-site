@@ -34,23 +34,25 @@ export default function Home() {
         </p>
         <SpeakerSection
           speaker={{
-            name: "Jane Doe",
-            title: "Chief Innovation Officer",
-            company: "TechCorp Inc.",
+            name: "Mark W. Phelan",
+            role: "Host",
+            title: "CEO + Founder",
+            company: "PROJXON",
             description:
-              "Jane Doe is a visionary leader with over 15 years of experience in driving innovation and growth in the tech industry. As Chief Innovation Officer at TechCorp Inc., she has spearheaded numerous successful initiatives that have transformed the company's product offerings and market presence. Jane is passionate about fostering a culture of creativity and collaboration, and she is dedicated to helping organizations unlock their full potential through strategic innovation.",
-            imageUrl: "/speakers/PhelanM.jpeg",
-            linkedinUrl: "https://www.linkedin.com/in/janedoe",
+              "Phelan is a Technical Program Manager, founder, and former U.S. Army officer with over 18 years of leadership experience and 12+ years delivering complex programs across cloud infrastructure, AI-enabled platforms, enterprise systems, and operations. Through PROJXON and The Phelan Focus, he helps founders, executives, and teams scale by building clear systems for execution, automation, and operational discipline—ensuring growth is driven by structure and strategy rather than burnout or guesswork. Known for a no-fluff approach, he focuses on practical frameworks, measurable outcomes, and disciplined leadership that turns plans into results.",
+            imageUrl: "/speakers/Phelan.JPEG",
+            linkedinUrl: "https://www.linkedin.com/in/phelanmarkw/",
           }}
         />
         <SpeakerSection
           speaker={{
-            name: "Jane Doe",
-            title: "Chief Innovation Officer",
-            company: "TechCorp Inc.",
+            name: "Dave Burlin",
+            role: "MC",
+            title: "Founder",
+            company: "Burlin Enterprises",
             description:
-              "Jane Doe is a visionary leader with over 15 years of experience in driving innovation and growth in the tech industry. As Chief Innovation Officer at TechCorp Inc., she has spearheaded numerous successful initiatives that have transformed the company's product offerings and market presence. Jane is passionate about fostering a culture of creativity and collaboration, and she is dedicated to helping organizations unlock their full potential through strategic innovation.",
-            imageUrl: "/speakers/PhelanM.jpeg",
+              "Dave Burlin is a Marine Corps veteran, entrepreneur, speaker, and ecosystem builder focused on creating lasting impact through leadership and strategic growth. From mentoring at-risk youth to scaling multi-city businesses and coaching teams across 17 industries to achieve 24–300% revenue growth, his work centers on connecting people, systems, and opportunities. As a community leader and Sales Director at Alive Print Shop, Dave helps founders and organizations break bottlenecks, build strong ecosystems, and scale with clarity for long-term success.",
+            imageUrl: "/speakers/DaveBurlin.jpg",
             linkedinUrl: "https://www.linkedin.com/in/janedoe",
           }}
         />

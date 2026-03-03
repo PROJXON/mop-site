@@ -106,7 +106,7 @@ const SponsorsCTA = () => {
             </a>
             <a
               className="hover:scale-105 transition-transform"
-              href="mailto:sponsorships@projxon.com"
+              href="mailto:events@projxon.com"
               style={{
                 border: "var(--color-secondary) 2px solid",
                 color: "var(--color-primary-content)",
@@ -212,7 +212,7 @@ const SponsorContact = () => {
       </p>
 
       <a
-        href="mailto:sponsorships@projxon.com"
+        href="mailto:events@projxon.com"
         className="cta-pulse"
         style={{
           display: "inline-block",
@@ -236,7 +236,7 @@ const SponsorContact = () => {
           letterSpacing: "0.1em",
         }}
       >
-        sponsorships@projxon.com
+        events@projxon.com
       </p>
     </section>
   );

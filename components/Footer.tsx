@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
             <p>
               <a href="https://www.projxon.com" className="font-bold">
                 {" "}
-                PROJXON
+                Powered by PROJXON
               </a>
               <br />
               Turning Chaos Into Opportunity

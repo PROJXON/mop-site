@@ -33,9 +33,11 @@ const VenueSection: React.FC = () => {
     time: "5pm - 9pm",
     timezone: "PST",
     address: "8460 Rozita Lee Ave, Las Vegas, NV 89113",
-    websiteUrl: "https://kiln.com/communities/las-vegas-assembly/",
-    linkedinUrl: "https://linkedin.com/company/theassemblybykiln",
-    instagramUrl: "https://instagram.com/theassemblybykiln",
+    websiteUrl:
+      "https://kiln.com/communities/las-vegas-assembly/?gad_source=6&gad_campaignid=21528444419",
+    linkedinUrl:
+      "https://www.linkedin.com/company/gatheratkiln/posts/?feedView=all",
+    instagramUrl: "https://www.instagram.com/kiln.co/",
     images: [
       {
         url: "/Venue/Assembly Bar.jpg",

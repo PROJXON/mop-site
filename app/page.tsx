@@ -16,14 +16,10 @@ export default function Home() {
       <Info
         imageUrl="/mop-base.png"
         title="What is the Momentum Office Party"
-        descriptionpt1="The Momentum Office party is a curated gathering designed for those who have outgrown traditional networking.
-         Hosted by PROJXON at the sophisticated The Assembly by Kiln in Las Vegas, 
-         we’ve traded awkward icebreakers and empty business card swaps for intentional, high-level connections."
-        descriptionpt2="Set against a backdrop of mid-century modern design and a relaxed cocktail-lounge atmosphere, 
-        Momentum brings together a diverse collective of founders, executives, and rising innovators. 
-        This isn't just a mixer; it’s a space where ambition is the common language. 
-        Whether through structured group interactions or organic, one-on-one breakthroughs, you’ll enter a room of strangers and leave with 
-        a community of allies ready to fuel your next big move."
+        descriptionpt1="The Momentum Office Party is a curated gathering for those who have outgrown traditional networking. Hosted by PROJXON at The Assembly by Kiln in Las Vegas, we’ve traded awkward icebreakers and surface-level exchanges for meaningful conversations that spark real collaboration and growth."
+        descriptionpt2="Designed with intention and energy, Momentum brings together founders, executives, and emerging leaders ready to connect with purpose. This isn’t a casual mixer—it’s a space where ambition meets authenticity. Whether through guided discussions or natural, one-on-one breakthroughs, you’ll enter with curiosity and leave with a network that’s invested in your next move.
+
+"
       />
 
       <WhyAttendMOP />
@@ -44,6 +40,7 @@ export default function Home() {
             linkedinUrl: "https://www.linkedin.com/in/phelanmarkw/",
           }}
         />
+        <div className="divider w-1/2 my-10 mx-auto" />
         <SpeakerSection
           speaker={{
             name: "Dave Burlin",
@@ -64,14 +61,14 @@ export default function Home() {
       <VenueSection />
 
       {/* Be a part of the Experience */}
-      <div className="flex flex-col items-center justify-center py-10 bg-black text-white">
+      <div className="flex flex-col items-center justify-center py-10 bg-(--color-background-2)/60 text-white">
         <h2 className="text-3xl font-bold mb-1">Be a Part of the Experience</h2>
         <p className="text-lg mb-6 text-center max-w-2xl italic">
           Elevate the Experience - Join us in shaping the future of networking.
         </p>
         <span>
-          By becoming a sponsor or host, you position your brand at the center
-          of innovation and connect directly with Las Vegas's most ambitious
+          By becoming a sponsor, you position your brand at the center of
+          innovation and connect directly with Las Vegas's most ambitious
           professionals. Support the community that celebrates growth and
           success.
         </span>
@@ -88,12 +85,6 @@ export default function Home() {
             className="btn btn-primary px-6 py-3 text-lg font-semibold text-secondary ml-4 "
           >
             Sponsor
-          </Link>
-          <Link
-            href="/partner/host"
-            className="btn btn-primary px-6 py-3 text-lg font-semibold text-secondary ml-4 "
-          >
-            Host
           </Link>
         </div>
       </div>

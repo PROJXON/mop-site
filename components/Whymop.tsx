@@ -15,7 +15,7 @@ const items: AccordionItem[] = [
     title: "Who You'll Meet",
     description:
       "Connect with industry leaders, innovative thinkers, and passionate professionals from across the city. Build meaningful relationships with people you've never met and strengthen your existing network.",
-    imageUrl: "/whyAttend/whyAttend-1.png",
+    imageUrl: "/whyAttend/whyAttend-2.jpg",
     imageAlt: "Networking at MOP",
     bullets: [
       "Entrepreneurs and startup founders",
@@ -28,7 +28,7 @@ const items: AccordionItem[] = [
     title: "What You Will Gain",
     description:
       "Take away valuable insights, fresh perspectives, and actionable strategies. Gain inspiration from success stories and discover new opportunities for growth.",
-    imageUrl: "/whyAttend/whyAttend-2.jpg",
+    imageUrl: "/whyAttend/whyAttend-3.jpg",
     imageAlt: "Learning experiences at MOP",
     bullets: [
       "High-value professional connections",
@@ -41,7 +41,7 @@ const items: AccordionItem[] = [
     title: "What to Bring",
     description:
       "Come prepared to make the most of your MOP experience. Here's everything you'll need for a successful and enjoyable evening.",
-    imageUrl: "/whyAttend/whyAttend-3.jpg",
+    imageUrl: "/whyAttend/whyAttend-1.png",
     imageAlt: "Event essentials",
     bullets: [
       "Business cards for networking",

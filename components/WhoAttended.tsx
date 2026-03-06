@@ -41,7 +41,7 @@ const WhoAttended: React.FC = () => {
   ];
 
   return (
-    <section className={styles.whoAttended}>
+    <section className={`${styles.whoAttended} py-16 px-4 bg-primary`}>
       <h2 className="text-2xl text-center mb-5 mr-2">
         Connect with
         <span className="text-rotate">

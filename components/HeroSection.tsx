@@ -1,5 +1,3 @@
-"use client";
-
 import CountdownTimer from "./Countdown";
 import Link from "next/link";
 

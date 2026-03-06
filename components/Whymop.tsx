@@ -77,13 +77,7 @@ function AnimatedAccordionItem({
   }, []);
 
   return (
-    /*
-     * Learning note — Unit testing:
-     * Extract this to its own file (AnimatedAccordionItem.tsx) and write a
-     * test that mounts it, fires an IntersectionObserver mock, and asserts
-     * the "opacity-100 translate-y-0" class is applied after intersection.
-     * Jest + @testing-library/react makes this straightforward.
-     */
+
     <div
       ref={ref}
       className="transition-all duration-700 ease-out"

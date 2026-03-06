@@ -3,24 +3,39 @@ import React from "react";
 const Footer: React.FC = () => {
   return (
     <footer>
-      <div className="footer-content ">
+      <div className="footer-content">
         <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
           <aside>
             <p>
               <a href="https://www.projxon.com" className="font-bold">
-                {" "}
                 Powered by PROJXON
               </a>
               <br />
               Turning Chaos Into Opportunity
             </p>
           </aside>
+
+          {/* Contact Column */}
+          <nav>
+            <h6 className="footer-title">Contact</h6>
+            <a href="mailto:events@projxon.com" className="link link-hover">
+              events@projxon.com
+            </a>
+            <a href="tel:+17252562693" className="link link-hover">
+              (725) 256-2693
+            </a>
+            <span>Las Vegas, NV 89101</span>
+          </nav>
+
+          {/* Social Column */}
           <nav>
             <h6 className="footer-title">Social</h6>
             <div className="grid grid-flow-col gap-4">
               <a
                 href="https://www.linkedin.com/company/momentum-office-party/"
-                target="_black"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +49,9 @@ const Footer: React.FC = () => {
               </a>
               <a
                 href="https://www.instagram.com/momentumofficeparty/"
-                target="_black"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -48,8 +65,22 @@ const Footer: React.FC = () => {
               </a>
             </div>
           </nav>
+
+          <div className="w-full">
+            <iframe
+              title="Momentum Office Party venue location"
+              src="https://www.google.com/maps?q=36.167722,-115.141167&z=15&output=embed"
+              width="100%"
+              height="300"
+              style={{ border: 0, display: "block" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </footer>
       </div>
+
       <div className="footer sm:footer-horizontal footer-center bg-primary text-base-content p-4">
         <p>&copy; {new Date().getFullYear()} PROJXON. All rights reserved.</p>
       </div>

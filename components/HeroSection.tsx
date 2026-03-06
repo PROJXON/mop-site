@@ -22,8 +22,13 @@ export default function HeroSection() {
           className="text-[#D4AF37] text-sm uppercase tracking-[0.25em] mb-6"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          <span className="text-white font-bold">PROJXON</span> Presents
+
+          <span className="text-white font-bold drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+            PROJXON Presents
+          </span>
+
         </p>
+
 
         <h1
           className="text-5xl sm:text-6xl lg:text-7xl text-white mb-4 leading-tight"
@@ -50,7 +55,7 @@ export default function HeroSection() {
           className="text-lg sm:text-xl text-white/80 mb-10 uppercase tracking-[0.15em]"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          March 7th, 2026 &bull; 5:00 PM &bull; Las Vegas, NV
+          March 7, 2026 &bull; 5PM – 9PM PST &bull; The Assembly, LV
         </p>
 
         {/* Countdown */}

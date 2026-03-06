@@ -5,13 +5,11 @@ import Timeline from "@/components/Timeline";
 import VenueSection from "@/components/Venue";
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
-import { EventDetails } from "@/components/EventDetail";
-
 export default function Home() {
   return (
-    <div>
+    <div >
+
       <HeroSection />
-      <EventDetails />
 
       <Info
         imageUrl="/mop-base.png"

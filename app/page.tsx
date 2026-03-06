@@ -21,7 +21,7 @@ export default function Home() {
       />
 
       <WhyAttendMOP />
-      <div className="flex flex-col items-center justify-center py-10">
+      <div className="flex flex-col items-center justify-center py-10 bg-[var(--color-background-2)]/40">
         <h2 className="text-3xl font-bold mb-1">Meet the Speakers</h2>
         <p className="text-lg mb-6 text-center max-w-2xl italic">
           Hear from the visionaries shaping Las Vegas's future.

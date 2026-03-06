@@ -55,10 +55,10 @@ export default function HeroSection() {
           className="flex flex-col items-center gap-2 mb-10"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          <p className="text-lg sm:text-xl text-primary/80 uppercase tracking-[0.15em]">
+          <p className="text-lg sm:text-xl text-[#D4AF37] uppercase tracking-[0.15em]">
             March 7, 2026 &nbsp;&bull;&nbsp; 5PM – 9PM PST
           </p>
-          <p className="text-lg sm:text-xl text-primary/80 uppercase tracking-[0.15em]">
+          <p className="text-lg sm:text-xl text-[#D4AF37] uppercase tracking-[0.15em]">
             The Assembly &nbsp;&bull;&nbsp; UnCommons, Las Vegas, NV
           </p>
         </div>

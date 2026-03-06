@@ -53,10 +53,6 @@ const VenueSection: React.FC = () => {
         url: "/Venue/Assembly High tops.jpg",
         alt: "Assembly High tops - Standing collaboration area",
       },
-      {
-        url: "/Venue/Assembly Rount Tops.jpg",
-        alt: "Assembly Round Tables - Intimate discussion areas",
-      },
     ],
   };
 

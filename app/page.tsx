@@ -7,8 +7,7 @@ import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 export default function Home() {
   return (
-    <div >
-
+    <div>
       <HeroSection />
 
       <Info
@@ -60,11 +59,13 @@ export default function Home() {
 
       {/* Be a part of the Experience */}
       <div className="flex flex-col items-center justify-center py-10 bg-[var(--color-background-2)]/40 text-white">
-        <h2 className="text-3xl text-secondary font-bold mb-1">Be a Part of the Experience</h2>
+        <h2 className="text-3xl text-secondary font-bold mb-1">
+          Be a Part of the Experience
+        </h2>
         <p className="text-lg text-secondary mb-6 text-center max-w-2xl italic">
           Elevate the Experience - Join us in shaping the future of networking.
         </p>
-        <span className="text-secondary">
+        <span className="text-secondary mx-10 text-center">
           By becoming a sponsor, you position your brand at the center of
           innovation and connect directly with Las Vegas's most ambitious
           professionals. Support the community that celebrates growth and

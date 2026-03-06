@@ -30,39 +30,39 @@ const details: EventDetail[] = [
 
 export function EventDetails() {
   return (
-    <section className="py-20 px-4 bg-[#F5F5F0]">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-10 md:py-16 px-4 bg-[#F5F5F0]">
+      <div className="max-w-4xl mx-auto">
         <h2
-          className="text-4xl sm:text-5xl text-[#2B2B2B] text-center mb-16"
+          className="text-3xl sm:text-4xl text-[#2B2B2B] text-center mb-8 md:mb-12"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Event Details
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {details.map((detail) => {
             const Icon = detail.icon;
             return (
               <div
                 key={detail.label}
-                className="bg-white border border-[#D4AF37]/20 rounded-lg p-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="bg-white border border-[#D4AF37]/20 rounded-lg p-4 md:p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#D4AF37]/10 rounded-full mb-4">
-                  <Icon className="text-[#D4AF37]" size={28} />
+                <div className="inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-[#D4AF37]/10 rounded-full mb-3">
+                  <Icon className="text-[#D4AF37]" size={22} />
                 </div>
                 <h3
-                  className="text-[#2B2B2B] mb-2"
+                  className="text-[#2B2B2B] mb-1 text-sm md:text-base"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {detail.label}
                 </h3>
                 <p
-                  className="text-xl text-[#2B2B2B] mb-1"
+                  className="text-lg md:text-xl text-[#2B2B2B] mb-1"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
                   {detail.value}
                 </p>
                 <p
-                  className="text-[#2B2B2B]/60"
+                  className="text-sm md:text-base text-[#2B2B2B]/60"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
                   {detail.subtext}

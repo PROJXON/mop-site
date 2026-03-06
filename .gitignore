@@ -5,3 +5,7 @@ dist
 # Logs
 /logs
 MOP_PROJECT_DOCUMENTATION.md
+AGENTS.md
+.DS_Store
+
+public/.DS_Store

@@ -20,7 +20,7 @@ const NavBarClean: React.FC = () => {
   return (
     <>
       {/* ── Desktop & Mobile Navbar ── */}
-      <header className="sticky top-0 z-50 bg-base-100 shadow-md">
+      <header className="sticky top-0 z-50 bg-[#0f0f0f] shadow-md">
         <nav className="flex items-center gap-8 px-4 lg:px-8 h-16">
           {/* Left — Logo */}
           <Link
@@ -28,16 +28,16 @@ const NavBarClean: React.FC = () => {
             className="flex items-center gap-3 hover:opacity-80 transition-opacity shrink-0"
           >
             <Image
-              src="/logo.png"
+              src="/MOP Logo._Transparent.png"
               alt="Momentum Office Party logo"
               width={40}
               height={40}
               className="object-contain"
             />
-            <span className="font-bold text-lg hidden sm:inline whitespace-nowrap">
+            <span className="font-bold text-lg text-white hidden sm:inline whitespace-nowrap">
               Momentum Office Party
             </span>
-            <span className="font-bold text-lg sm:hidden">MOP</span>
+            <span className="font-bold text-lg text-white sm:hidden">MOP</span>
           </Link>
 
           {/* Left — Desktop links */}
@@ -46,7 +46,7 @@ const NavBarClean: React.FC = () => {
               <li key={label}>
                 <Link
                   href={href}
-                  className="text-sm font-medium tracking-wide hover:text-primary transition-colors"
+                  className="text-sm font-medium tracking-wide text-white/80 hover:text-primary transition-colors"
                 >
                   {label}
                 </Link>
@@ -104,14 +104,14 @@ const NavBarClean: React.FC = () => {
       {/* Slide-in panel */}
       <aside
         className={`
-          fixed top-0 left-0 h-full w-72 bg-base-100 z-50 shadow-xl
+          fixed top-0 left-0 h-full w-72 bg-[#0f0f0f] z-50 shadow-xl
           transform transition-transform duration-300 ease-in-out lg:hidden
           ${drawerOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
         {/* Close */}
-        <div className="flex items-center justify-between px-4 h-16 border-b border-base-200">
-          <span className="font-bold text-base">Menu</span>
+        <div className="flex items-center justify-between px-4 h-16 border-b border-white/10">
+          <span className="font-bold text-base text-white">Menu</span>
           <button
             className="btn btn-ghost btn-circle btn-sm"
             aria-label="Close menu"
@@ -139,7 +139,7 @@ const NavBarClean: React.FC = () => {
             <li key={label}>
               <Link
                 href={href}
-                className="text-base py-3"
+                className="text-base py-3 text-white/80 hover:text-primary transition-colors"
                 onClick={() => setDrawerOpen(false)}
               >
                 {label}

@@ -187,12 +187,116 @@ const UPCOMING_SCHEDULE: YearSection[] = [
   },
 ];
 
-const UpcomingSchedule: React.FC = () => {
-  const [activeYear, setActiveYear] = useState<string | null>(null);
+const COMING_UP = UPCOMING_SCHEDULE.filter((y) => y.year === "2026");
+const FUTURE = UPCOMING_SCHEDULE.filter((y) => parseInt(y.year) > 2026);
 
-  const activeSection = activeYear
-    ? UPCOMING_SCHEDULE.find((y) => y.year === activeYear) ?? null
-    : null;
+type Tab = "coming-up" | "future";
+
+const buttonBase =
+  "inline-block px-8 py-3 text-sm font-bold uppercase tracking-[0.15em] rounded transition-all duration-300 shadow-lg shadow-black/30 cursor-pointer";
+const buttonActive =
+  `${buttonBase} bg-primary text-black hover:bg-[#c9a227] hover:scale-105`;
+const buttonInactive =
+  `${buttonBase} bg-transparent text-primary border-2 border-primary hover:bg-primary/10 hover:scale-105`;
+
+function renderEntries(sections: YearSection[]) {
+  return sections.map((section) => {
+    const entries =
+      section.cities.flatMap((city) =>
+        city.events && city.events.length > 0
+          ? city.events.map((event) => ({ city, event }))
+          : [{ city, event: null as EventItem | null }]
+      ) ?? [];
+
+    entries.sort((a, b) => {
+      const ak = a.event?.sortKey;
+      const bk = b.event?.sortKey;
+      if (ak && bk) return ak.localeCompare(bk);
+      if (ak) return -1;
+      if (bk) return 1;
+      return a.city.city.localeCompare(b.city.city);
+    });
+
+    return (
+      <div key={section.year} className="space-y-6">
+        <h2 className="text-2xl font-semibold border-l-4 border-primary pl-3">
+          {section.year}
+        </h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {entries.map(({ city, event }, idx) => (
+            <article
+              key={`${section.year}-${city.city}-${event?.sortKey ?? idx}`}
+              className="card bg-base-200 shadow-sm border border-base-300/60"
+            >
+              {city.imageUrl && (
+                <figure className="h-40 w-full overflow-hidden rounded-t-2xl">
+                  <img
+                    src={city.imageUrl}
+                    alt={`${city.city} Momentum Office Party location`}
+                    className="h-full w-full object-cover"
+                  />
+                </figure>
+              )}
+              <div className="card-body space-y-3">
+                <h3 className="text-xl font-semibold">{city.city}</h3>
+
+                {event ? (
+                  <div className="rounded-lg bg-base-100/80 border border-base-300 p-3 space-y-1">
+                    {event.title && (
+                      <p className="font-medium">{event.title}</p>
+                    )}
+                    {event.date && (
+                      <p className="text-sm text-base-content/70">
+                        {event.date}
+                      </p>
+                    )}
+                    {event.social && event.social.length > 0 && (
+                      <div className="pt-1">
+                        <div className="text-xs uppercase tracking-wide text-base-content/60 mb-1">
+                          Social
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {event.social.map((s) =>
+                            s.href ? (
+                              <a
+                                key={s.label}
+                                href={s.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-xs btn-outline btn-primary"
+                              >
+                                {s.label}
+                              </a>
+                            ) : (
+                              <span
+                                key={s.label}
+                                className="btn btn-xs btn-outline btn-primary btn-disabled"
+                              >
+                                {s.label}
+                              </span>
+                            )
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <p className="text-sm text-base-content/70">
+                    Details to be announced. Stay tuned for dates and
+                    mixer themes in {city.city}.
+                  </p>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    );
+  });
+}
+
+const UpcomingSchedule: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<Tab>("coming-up");
 
   return (
     <section className="py-12 lg:py-16 bg-base-100">
@@ -207,128 +311,28 @@ const UpcomingSchedule: React.FC = () => {
           </p>
         </header>
 
-        <div className="mb-8 flex flex-wrap justify-center gap-3">
-          {UPCOMING_SCHEDULE.map((yearSection) => {
-            const isActive = activeYear === yearSection.year;
-            return (
-              <button
-                key={yearSection.year}
-                type="button"
-                className={`btn btn-sm md:btn-md ${
-                  isActive ? "btn-primary" : "btn-outline btn-primary"
-                }`}
-                onClick={() =>
-                  setActiveYear(isActive ? null : yearSection.year)
-                }
-              >
-                {yearSection.year}
-              </button>
-            );
-          })}
+        <div className="mb-8 flex justify-center gap-4">
+          <button
+            type="button"
+            className={activeTab === "coming-up" ? buttonActive : buttonInactive}
+            onClick={() => setActiveTab("coming-up")}
+          >
+            Coming Up
+          </button>
+          <button
+            type="button"
+            className={activeTab === "future" ? buttonActive : buttonInactive}
+            onClick={() => setActiveTab("future")}
+          >
+            Future
+          </button>
         </div>
 
-        {activeSection ? (
-          <div className="space-y-6">
-            <h2 className="text-2xl font-semibold border-l-4 border-primary pl-3">
-              {activeSection.year}
-            </h2>
-
-            {(() => {
-              const entries =
-                activeSection.cities.flatMap((city) =>
-                  city.events && city.events.length > 0
-                    ? city.events.map((event) => ({ city, event }))
-                    : [{ city, event: null as EventItem | null }]
-                ) ?? [];
-
-              entries.sort((a, b) => {
-                const ak = a.event?.sortKey;
-                const bk = b.event?.sortKey;
-                if (ak && bk) return ak.localeCompare(bk);
-                if (ak) return -1;
-                if (bk) return 1;
-                return a.city.city.localeCompare(b.city.city);
-              });
-
-              return (
-                <div className="grid gap-6 md:grid-cols-2">
-                  {entries.map(({ city, event }, idx) => (
-                    <article
-                      key={`${activeSection.year}-${city.city}-${
-                        event?.sortKey ?? idx
-                      }`}
-                      className="card bg-base-200 shadow-sm border border-base-300/60"
-                    >
-                      {city.imageUrl && (
-                        <figure className="h-40 w-full overflow-hidden rounded-t-2xl">
-                          <img
-                            src={city.imageUrl}
-                            alt={`${city.city} Momentum Office Party location`}
-                            className="h-full w-full object-cover"
-                          />
-                        </figure>
-                      )}
-                      <div className="card-body space-y-3">
-                        <h3 className="text-xl font-semibold">{city.city}</h3>
-
-                        {event ? (
-                          <div className="rounded-lg bg-base-100/80 border border-base-300 p-3 space-y-1">
-                            {event.title && (
-                              <p className="font-medium">{event.title}</p>
-                            )}
-                            {event.date && (
-                              <p className="text-sm text-base-content/70">
-                                {event.date}
-                              </p>
-                            )}
-                            {event.social && event.social.length > 0 && (
-                              <div className="pt-1">
-                                <div className="text-xs uppercase tracking-wide text-base-content/60 mb-1">
-                                  Social
-                                </div>
-                                <div className="flex flex-wrap gap-2">
-                                  {event.social.map((s) =>
-                                    s.href ? (
-                                      <a
-                                        key={s.label}
-                                        href={s.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="btn btn-xs btn-outline btn-primary"
-                                      >
-                                        {s.label}
-                                      </a>
-                                    ) : (
-                                      <span
-                                        key={s.label}
-                                        className="btn btn-xs btn-outline btn-primary btn-disabled"
-                                      >
-                                        {s.label}
-                                      </span>
-                                    )
-                                  )}
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        ) : (
-                          <p className="text-sm text-base-content/70">
-                            Details to be announced. Stay tuned for dates and
-                            mixer themes in {city.city}.
-                          </p>
-                        )}
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              );
-            })()}
-          </div>
-        ) : (
-          <p className="text-center text-base-content/60">
-            Select a year above to view scheduled cities and mixers.
-          </p>
-        )}
+        <div className="space-y-10">
+          {activeTab === "coming-up"
+            ? renderEntries(COMING_UP)
+            : renderEntries(FUTURE)}
+        </div>
       </div>
     </section>
   );

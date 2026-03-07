@@ -11,6 +11,7 @@ interface VenueImage {
 
 interface VenueDetails {
   name: string;
+  area: string;
   date: string;
   time: string;
   timezone: string;
@@ -29,6 +30,7 @@ const VenueSection: React.FC = () => {
 
   const venue: VenueDetails = {
     name: "The Assembly by Kiln",
+    area: "UnCommons, Las Vegas",
     date: "March 7th, 2026",
     time: "5pm - 9pm",
     timezone: "PST",
@@ -91,13 +93,16 @@ const VenueSection: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-10 md:mb-14 animate-fade-up">
-          <p className="section-label mb-3">Event Details</p>
+          <p className="section-label mb-3">Venue Details</p>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-white mb-2">
             Where we gather.
           </h2>
-          <p className="text-white/60 text-sm sm:text-base max-w-2xl mx-auto">
-            A thoughtfully curated venue in the heart of Las Vegas, designed for
-            meaningful connections and premium experiences.
+          <p className="text-white/60 text-sm sm:text-base mx-auto">
+            The Assembly by Kiln isn't your average event venue, it's a space built for exactly the kind of gathering MOP is designed to be. Nestled within UnCommons in the heart of Las Vegas, The Assembly blends modern design with a warm, community-driven atmosphere that makes real conversation feel natural.
+
+            From the open-air courtyard to the full-service bar, every detail of the space invites you to slow down, look up from your phone, and actually connect. It's the kind of place where a quick introduction turns into a 30-minute conversation  and that's by design.
+
+            This is where Momentum comes to life on March 7th. Come for the network, stay for the energy.
           </p>
         </div>
 
@@ -114,9 +119,8 @@ const VenueSection: React.FC = () => {
               {venue.images.map((image, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-                    index === currentImageIndex ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${index === currentImageIndex ? "opacity-100" : "opacity-0"
+                    }`}
                 >
                   <Image
                     src={image.url}
@@ -184,11 +188,10 @@ const VenueSection: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => handleDotClick(index)}
-                  className={`transition-all duration-300 rounded-full ${
-                    index === currentImageIndex
-                      ? "bg-yellow-400 w-3 h-3"
-                      : "bg-white/30 hover:bg-white/50 w-2.5 h-2.5"
-                  }`}
+                  className={`transition-all duration-300 rounded-full ${index === currentImageIndex
+                    ? "bg-yellow-400 w-3 h-3"
+                    : "bg-white/30 hover:bg-white/50 w-2.5 h-2.5"
+                    }`}
                   aria-label={`Go to image ${index + 1}`}
                   aria-current={index === currentImageIndex}
                 />
@@ -200,9 +203,14 @@ const VenueSection: React.FC = () => {
           <div className="flex flex-col justify-start">
             <div className="bg-white/5 border border-white/10 rounded-xl p-6 sm:p-8 hover:border-white/20 transition-colors duration-300">
               {/* Venue Name */}
-              <h3 className="font-display text-2xl sm:text-3xl text-white mb-6">
-                {venue.name}
-              </h3>
+              <div className="flex flex-col gap-2 mb-6" >
+                <h3 className="font-display text-2xl sm:text-3xl text-white">
+                  {venue.name}
+                </h3>
+                <span className="text-yellow-400 text-sm sm:text-base font-medium">
+                  {venue.area}
+                </span>
+              </div>
 
               {/* Event Details */}
               <div className="space-y-4 mb-8">

@@ -43,7 +43,8 @@ export default function Home() {
             name: "Dave Burlin",
             role: "MC",
             title: "Founder",
-            company: "Burlin Enterprises",
+            // VetsInTech; Nevada State Coordinator for Global Entrpreneurship week
+            company: "VetsInTech | State Coordinator for Global Entrpreneurship week",
             description:
               "Dave Burlin is a United States Marine Corps Veteran, entrepreneur, and community builder known for connecting people, ideas, and opportunities across the Las Vegas business ecosystem. He serves as the Nevada State Coordinator for Global Entrepreneurship Week and works with VetsInTech to expand opportunities for Veterans in entrepreneurship and technology. Dave is also the creator of Freedom Week, an initiative dedicated to supporting Veteran entrepreneurs and strengthening the military-connected business community. Dave is the host of the Dave Means Business Podcast, where he explores leadership, partnerships, and the power of authentic relationships in business. In addition to his work in the entrepreneurial ecosystem, Dave has spent years in the event industry as a DJ and emcee, performing at more than 350 weddings and corporate events across the Las Vegas Valley with Choice Sound LV, helping expand their entertainment business while building a reputation for bringing energy, professionalism, and connection to every event he hosts. Dave believes that “networking is not about getting the next invoice — it’s about unlocking infinite opportunities in every person you meet.",
             imageUrl: "/speakers/DaveBurlin.jpg",

@@ -5,6 +5,9 @@ import Timeline from "@/components/Timeline";
 import VenueSection from "@/components/Venue";
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
+import FeaturedOnTicker from "@/components/FeaturedOnTicker";
+import SponsorsGrid from "@/components/SponsorsGrid";
+import PartnersGrid from "@/components/PartnersGrid";
 export default function Home() {
   return (
     <div>
@@ -54,6 +57,9 @@ export default function Home() {
       </div>
 
       {/* The activity line up */}
+      <FeaturedOnTicker />
+      <SponsorsGrid />
+      <PartnersGrid />
       <Timeline />
       {/* Venue Section */}
       <VenueSection />

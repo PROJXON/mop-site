@@ -4,18 +4,18 @@
 interface MediaOutlet {
   name: string;
   abbr: string; // short acronym shown in placeholder
+  assetUrl?: string;
 }
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 const FEATURED_ON: MediaOutlet[] = [
-  { name: "The Phelan Focus", abbr: "TPF" },
-  { name: "Tech Vegas", abbr: "TV" },
-  { name: "Vegas Startup Scene", abbr: "VSS" },
-  { name: "LeDuc Leadership and Media", abbr: "LLM" },
+  { name: "The Phelan Focus", abbr: "TPF", assetUrl: "/PartnerAssets/TPF Logo - New.png" },
+  { name: "Tech Vegas", abbr: "TV", assetUrl: "/PartnerAssets/TechVegas.png" },
+  { name: "LeDuc Leadership and Media", abbr: "LLM", assetUrl: "/PartnerAssets/LuDucLM.png" },
 ];
 
 // Duplicate the list so the marquee loops seamlessly
-const TICKER_ITEMS = [...FEATURED_ON, ...FEATURED_ON, ...FEATURED_ON];
+const TICKER_ITEMS = [...FEATURED_ON, ...FEATURED_ON, ...FEATURED_ON, ...FEATURED_ON, ...FEATURED_ON, ...FEATURED_ON];
 
 // ─── Placeholder logo card ────────────────────────────────────────────────────
 function LogoPlaceholder({ outlet }: { outlet: MediaOutlet }) {
@@ -37,7 +37,9 @@ function LogoPlaceholder({ outlet }: { outlet: MediaOutlet }) {
       "
     >
       <span className="font-display text-xl text-yellow-400/70 leading-none tracking-widest">
-        {outlet.abbr}
+        {outlet.assetUrl && outlet.assetUrl !== "" && (
+          <img src={outlet.assetUrl} alt={outlet.name} />
+        )}
       </span>
       <span className="text-white/30 text-[0.55rem] tracking-[0.2em] uppercase text-center px-2 leading-tight">
         {outlet.name}
@@ -53,19 +55,16 @@ export default function FeaturedOnTicker() {
       aria-label="Featured on"
       className="py-10 border-y border-white/8 overflow-hidden relative"
     >
-      {/* fade edges */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 z-10 bg-gradient-to-r from-[var(--color-background)] to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10 bg-gradient-to-l from-[var(--color-background)] to-transparent" />
 
       <p className="section-label text-center mb-6 relative z-20">
-        As Seen In
+        Featured On
       </p>
 
       {/* Marquee track */}
-      <div className="flex items-center" aria-hidden="true">
+      <div className="flex items-center justify-center mt-10" aria-hidden="true">
         <div className="flex items-center animate-marquee whitespace-nowrap">
           {TICKER_ITEMS.map((outlet, i) => (
-            <LogoPlaceholder key={`${outlet.abbr}-${i}`} outlet={outlet} />
+            <LogoPlaceholder key={`${outlet.assetUrl}-${i}`} outlet={outlet} />
           ))}
         </div>
       </div>

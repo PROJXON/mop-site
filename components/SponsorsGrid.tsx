@@ -5,18 +5,17 @@ import { useEffect, useRef, useState } from "react";
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface Sponsor {
   name: string;
-  abbr: string;
   tagline?: string;
+  assetUrl?: string;
 }
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 const SPONSORS: Sponsor[] = [
-  { name: "Corporate Coworking", abbr: "CC", tagline: "Workspace Partner" },
-  { name: "Kiln", abbr: "KN", tagline: "Coworking & Community" },
-  { name: "Simply Charcuterie", abbr: "SC", tagline: "Catering Partner" },
-  { name: "Cootoh", abbr: "CT", tagline: "Tech Partner" },
-  { name: "Choice Sound", abbr: "CS", tagline: "Audio & Production" },
-  { name: "PROJXON", abbr: "PX", tagline: "Presenting Sponsor" },
+  { name: "Corporate Coworking", tagline: "Workspace Partner", assetUrl: "/PartnerAssets/CorporateCowroking.webp" },
+  { name: "Kiln", tagline: "Venue Partner", assetUrl: "/PartnerAssets/Kiln-logo.webp" },
+  { name: "Simply Charcuterie", tagline: "Catering Partner", assetUrl: "/PartnerAssets/Simply charcuterie LV.jpeg" },
+  { name: "Cootoh", tagline: "Food Partner", assetUrl: "/PartnerAssets/Cootoh.jpeg" },
+  { name: "Choice Sound", tagline: "Audio & Production", assetUrl: "/PartnerAssets/ChoiceSoundLogo.webp" },
 ];
 
 // ─── Card ────────────────────────────────────────────────────────────────────
@@ -49,19 +48,23 @@ function SponsorCard({
       }}
     >
       {/* Gold corner accent */}
-      <span className="absolute top-0 left-0 w-4 h-4 border-t border-l border-yellow-400/40 group-hover:border-yellow-400/70 transition-colors" />
-      <span className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-yellow-400/40 group-hover:border-yellow-400/70 transition-colors" />
+      {!sponsor.assetUrl && (
+        <>
+          <span className="absolute top-0 left-0 w-4 h-4 border-t border-l border-yellow-400/40 group-hover:border-yellow-400/70 transition-colors" />
+          <span className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-yellow-400/40 group-hover:border-yellow-400/70 transition-colors" />
 
-      <span className="font-display text-3xl text-yellow-400/80 group-hover:text-yellow-400 transition-colors leading-none tracking-widest">
-        {sponsor.abbr}
-      </span>
-      <span className="text-white/80 text-xs font-semibold tracking-wide text-center">
-        {sponsor.name}
-      </span>
-      {sponsor.tagline && (
-        <span className="text-white/30 text-[0.6rem] tracking-[0.2em] uppercase">
-          {sponsor.tagline}
-        </span>
+          <span className="font-display text-3xl text-yellow-400/80 group-hover:text-yellow-400 transition-colors leading-none tracking-widest">
+            {sponsor.name}
+          </span>
+          {sponsor.tagline && (
+            <span className="text-white/30 text-[0.6rem] tracking-[0.2em] uppercase">
+              {sponsor.tagline}
+            </span>
+          )}
+        </>
+      )}
+      {sponsor.assetUrl && sponsor.assetUrl !== "" && (
+        <img src={sponsor.assetUrl} alt={sponsor.name} />
       )}
     </div>
   );
@@ -94,10 +97,10 @@ export default function SponsorsGrid() {
           <p className="section-label mb-3">Proud Sponsors</p>
           <h2
             id="sponsors-heading"
-            className="font-display text-white text-3xl sm:text-4xl font-light"
+            className="font-display text-secondary text-3xl sm:text-4xl font-light"
           >
             The brands that{" "}
-            <em className="text-yellow-400 not-italic">back the movement.</em>
+            <em className="font-display text-yellow-400 not-italic">back the movement.</em>
           </h2>
         </div>
 

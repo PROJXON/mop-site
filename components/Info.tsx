@@ -14,21 +14,21 @@ const Info: React.FC<InfoProps> = ({
   imageUrl,
 }) => {
   return (
-    <section className="relative isolate overflow-hidden bg-(--color-surface-2)/80 py-20 px-6">
+    <section className="relative isolate overflow-hidden bg-white py-20 px-6">
       {/* Subtle gold accent line at top */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[#D4AF37]" />
 
       <div className="max-w-7xl mx-auto">
         {/* Section label */}
         <p
-          className="text-[#D4AF37] text-sm uppercase tracking-[0.2em] text-center mb-4"
+          className="text-[var(--color-secondary)] text-sm uppercase tracking-[0.2em] text-center mb-4"
           style={{ fontFamily: "var(--font-body)" }}
         >
           About the Event
         </p>
 
         <h2
-          className="text-4xl sm:text-5xl text-white text-center mb-16"
+          className="text-4xl sm:text-5xl text-[var(--color-secondary)] text-center mb-16"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           {title}
@@ -40,14 +40,14 @@ const Info: React.FC<InfoProps> = ({
             {/* Gold vertical bar accent */}
             <div className="border-l-4 border-[#D4AF37] pl-6 space-y-4">
               <p
-                className="text-lg text-white/90 leading-relaxed"
+                className="text-lg text-[var(--color-secondary)]/90 leading-relaxed"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 {descriptionpt1}
               </p>
               {descriptionpt2 && (
                 <p
-                  className="text-lg text-white/70 leading-relaxed"
+                  className="text-lg text-[var(--color-secondary)]/70 leading-relaxed"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
                   {descriptionpt2}

@@ -51,7 +51,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   if (isExpired) {
     return (
       <div className="flex justify-center items-center">
-        <h2 className="text-2xl font-bold text-gray-800">We are live!</h2>
+        <h2 className="text-2xl font-bold text-primary/80">Event has ended - New dates coming soon!</h2>
       </div>
     );
   }

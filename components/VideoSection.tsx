@@ -6,17 +6,24 @@ const VideoSection = () => {
     return (
         <section className="bg-[var(--color-surface)] py-16">
             <div className="justify-center flex-col gap-4">
-                <div className="font-display text-center justify-center text-white">
+                <p
+                    className="text-white text-sm uppercase tracking-[0.2em] text-center mb-4"
+                    style={{ fontFamily: "var(--font-body)" }}
+                >
                     Highlights
-                </div>
-                <div className="text-center justify-center text-white text-3xl">
+                </p>
+
+                <h2
+                    className="text-4xl sm:text-5xl text-white text-center mb-16"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                >
                     See the highlights of our latest event
-                </div>
+                </h2>
             </div>
 
-            <div className="mt-16 max-w-7xl mx-auto mb-16">
+            <div className="mt-16 max-w-4xl mx-auto mb-16">
                 <HighlightsVideo />
-                <Link href="/highlights" className="mt-4 block text-center text-lg text-accent">See More</Link>
+                <Link href="/highlights" className="mt-4 block text-center text-lg text-white/60 hover:text-white transition-colors duration-300">See More</Link>
             </div>
         </section>
     )

@@ -1,4 +1,5 @@
 import React from "react";
+import HighlightsVideo from "./HighlightsVideo";
 
 interface InfoProps {
   title: string;

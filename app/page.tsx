@@ -8,6 +8,8 @@ import HeroSection from "@/components/HeroSection";
 import FeaturedOnTicker from "@/components/FeaturedOnTicker";
 import SponsorsGrid from "@/components/SponsorsGrid";
 import PartnersGrid from "@/components/PartnersGrid";
+import VideoSection from "@/components/VideoSection";
+
 export default function Home() {
   return (
     <div>
@@ -18,9 +20,8 @@ export default function Home() {
         title="What is the Momentum Office Party"
         descriptionpt1="The Momentum Office Party is a curated gathering for those who have outgrown traditional networking. Hosted by PROJXON at The Assembly by Kiln in Las Vegas, we’ve traded awkward icebreakers and surface-level exchanges for meaningful conversations that spark real collaboration and growth."
         descriptionpt2="Designed with intention and energy, Momentum brings together founders, executives, and emerging leaders ready to connect with purpose. This isn’t a casual mixer—it’s a space where ambition meets authenticity. Whether through guided discussions or natural, one-on-one breakthroughs, you’ll enter with curiosity and leave with a network that’s invested in your next move.
-
-"
-      />
+"/>
+      <VideoSection />
 
       <WhyAttendMOP />
       <div className="flex flex-col items-center justify-center py-10 bg-[var(--color-background-2)]/40">

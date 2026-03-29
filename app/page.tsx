@@ -10,6 +10,7 @@ import SponsorsGrid from "@/components/SponsorsGrid";
 import PartnersGrid from "@/components/PartnersGrid";
 import VideoSection from "@/components/VideoSection";
 
+
 export default function Home() {
   return (
     <div>
@@ -24,9 +25,9 @@ export default function Home() {
       <VideoSection />
 
       <WhyAttendMOP />
-      <div className="flex flex-col items-center justify-center py-10 bg-[var(--color-background-2)]/40">
-        <h2 className="text-3xl font-bold mb-1">Meet the Speakers</h2>
-        <p className="text-lg mb-6 text-center max-w-2xl italic">
+      <section id="speakers" className="flex flex-col items-center justify-center py-10 bg-[var(--color-surface)]">
+        <h2 className="text-white text-3xl font-bold mb-1">Meet the Speakers</h2>
+        <p className="text-white/70 text-lg mb-6 text-center max-w-2xl italic">
           Hear from the visionaries shaping Las Vegas's future.
         </p>
         <SpeakerSection
@@ -55,7 +56,7 @@ export default function Home() {
             linkedinUrl: "https://www.linkedin.com/in/daveburlin/",
           }}
         />
-      </div>
+      </section>
 
       {/* The activity line up */}
       <FeaturedOnTicker />

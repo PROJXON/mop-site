@@ -15,7 +15,7 @@ interface SpeakerSectionProps {
   speaker: Speaker;
 }
 
-const SpeakerSection: React.FC<SpeakerSectionProps> = ({ speaker }) => {
+const SpeakerCard: React.FC<SpeakerSectionProps> = ({ speaker }) => {
   return (
     <div className="py-16 px-4 lg:px-8 bg-black">
       <div className="container mx-auto max-w-6xl">
@@ -117,4 +117,4 @@ const SpeakerSection: React.FC<SpeakerSectionProps> = ({ speaker }) => {
   );
 };
 
-export default SpeakerSection;
+export default SpeakerCard;

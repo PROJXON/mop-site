@@ -16,8 +16,8 @@ const Info: React.FC<InfoProps> = ({
 }) => {
   return (
     <section className="relative isolate overflow-hidden bg-white py-20 px-6">
-      {/* Subtle gold accent line at top */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[#D4AF37]" />
+      {/* Subtle red accent line at top */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[var(--color-accent)]" />
 
       <div className="max-w-7xl mx-auto">
         {/* Section label */}
@@ -84,7 +84,7 @@ const Info: React.FC<InfoProps> = ({
       </div>
 
       {/* Subtle gold accent line at bottom */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[#D4AF37]" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[var(--color-accent)]" />
     </section>
   );
 };

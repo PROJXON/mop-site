@@ -189,7 +189,7 @@ function AnimatedAccordionItem({
 const WhyAttendMOP: React.FC = () => {
   return (
     <section className="relative py-20 px-6 bg-white">
-      {/* Top red accent */}
+      {/* Subtle red accent line at top */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[var(--color-accent)]" />
 
       <div className="max-w-4xl mx-auto">
@@ -220,8 +220,9 @@ const WhyAttendMOP: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom red accent */}
+      {/* Subtle red accent line at bottom */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[var(--color-accent)]" />
+
     </section>
   );
 };

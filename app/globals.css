@@ -7,9 +7,9 @@
 }
 
 :root {
-  --color-primary: #ffd700;
-  --color-primary-hover: #f4c430;
-  --color-primary-active: #e6b800;
+  --color-primary: #ffffff;
+  --color-primary-hover: #f1f1f1;
+  --color-primary-active: #ffffff/60;
   --color-primary-content: #000000;
   --color-secondary: #060605;
   --color-accent: #e03b2f;

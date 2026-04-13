@@ -145,7 +145,7 @@ function DesktopAgendaItem({
                     onMouseLeave={() => setHovered(false)}
                     className={`w-5 h-5 rounded-full border-2 transition-all duration-300 cursor-pointer ${hovered
                         ? "bg-[var(--color-accent)] border-[var(--color-accent)] scale-125 shadow-[0_0_12px_rgba(212,175,55,0.7)]"
-                        : "bg-transparent border-[var(--color-accent)]/60"
+                        : "bg-transparent border-[var(--color-primary)]/60"
                         }`}
                 />
             </div>
@@ -257,7 +257,7 @@ export default function Timeline() {
 
             </div>
 
-            {/* Subtle red accent line at top */}
+            {/* Subtle red accent line at bottom */}
             <div className="w-24 mx-auto h-[2px] bg-[var(--color-accent)]" />
 
         </section>

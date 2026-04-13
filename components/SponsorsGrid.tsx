@@ -33,8 +33,8 @@ function SponsorCard({
       aria-label={sponsor.name}
       className={`
         group relative flex flex-col items-center justify-center gap-2
-        border border-yellow-400/20 bg-yellow-400/5
-        hover:border-yellow-400/50 hover:bg-yellow-400/10
+        border border-accent/20 bg-accent/5
+        hover:border-accent/50 hover:bg-accent/10
         hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(212,175,55,0.12)]
         transition-all duration-300
         rounded-sm p-6 min-h-[120px]
@@ -100,7 +100,7 @@ export default function SponsorsGrid() {
             className="font-display text-secondary text-3xl sm:text-4xl font-light"
           >
             The brands that{" "}
-            <em className="font-display text-yellow-400 not-italic">back the movement.</em>
+            <em className="font-display text-accent not-italic">back the movement.</em>
           </h2>
         </div>
 

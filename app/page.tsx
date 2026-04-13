@@ -21,7 +21,7 @@ export default function Home() {
         title="What is the Momentum Office Party"
         descriptionpt1="The Momentum Office Party is a curated gathering for those who have outgrown traditional networking. Hosted by PROJXON at The Assembly by Kiln in Las Vegas, we’ve traded awkward icebreakers and surface-level exchanges for meaningful conversations that spark real collaboration and growth."
         descriptionpt2="Designed with intention and energy, Momentum brings together founders, executives, and emerging leaders ready to connect with purpose. This isn’t a casual mixer—it’s a space where ambition meets authenticity. Whether through guided discussions or natural, one-on-one breakthroughs, you’ll enter with curiosity and leave with a network that’s invested in your next move.
-"/>
+        "/>
       <VideoSection />
 
       <WhyAttendMOP />
@@ -48,7 +48,7 @@ export default function Home() {
       <VenueSection />
 
       {/* Be a part of the Experience */}
-      <div className="flex flex-col items-center justify-center py-10 bg-[var(--color-background-2)]/40 text-white">
+      <div className="flex flex-col items-center justify-center py-10 bg-[var(--color-primary)] text-white">
         <h2 className="text-3xl text-secondary font-bold mb-1">
           Be a Part of the Experience
         </h2>
@@ -65,13 +65,13 @@ export default function Home() {
           <Link
             href="https://www.eventbrite.com/e/momentum-office-party-networking-las-vegas-spring-social-tickets-1980690107430?aff=oddtdtcreator"
             target="_blank"
-            className="btn btn-primary px-6 py-3 text-lg font-semibold text-secondary "
+            className="btn btn-primary px-6 py-3 text-lg font-semibold text-secondary hover:bg-[var(--color-accent)] hover:text-white"
           >
             RSVP
           </Link>
           <Link
             href="/partner/sponsor"
-            className="btn btn-primary px-6 py-3 text-lg font-semibold text-secondary ml-4 "
+            className="btn btn-primary px-6 py-3 text-lg font-semibold text-secondary hover:bg-[var(--color-accent)] hover:text-white ml-4 "
           >
             Sponsor
           </Link>

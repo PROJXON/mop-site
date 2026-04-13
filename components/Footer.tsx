@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
         <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
           <aside>
             <p>
-              <a href="https://www.projxon.com" className="font-bold">
+              <a href="https://www.projxon.com" className="font-bold hover:text-[#FFD700]">
                 Powered by PROJXON
               </a>
               <br />
@@ -27,9 +27,9 @@ const Footer: React.FC = () => {
             <span>Las Vegas, NV 89101</span>
           </nav>
 
-          {/* Social Column */}
+          {/* Socials Column */}
           <nav>
-            <h6 className="footer-title">Social</h6>
+            <h6 className="footer-title">Socials</h6>
             <div className="grid grid-flow-col gap-4">
               <a
                 href="https://www.linkedin.com/company/momentum-office-party/"
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
         </footer>
       </div>
 
-      <div className="footer sm:footer-horizontal footer-center bg-primary text-base-content p-4">
+      <div className="footer sm:footer-horizontal footer-center bg-[#FFD700] text-base-content p-4">
         <p>&copy; {new Date().getFullYear()} PROJXON. All rights reserved.</p>
       </div>
     </footer>

@@ -27,7 +27,7 @@ export default function HostCTA({ email }: HostCTAProps) {
           className="text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-tight"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Host a MOP at
+          Host the Momentum Office Party at
           <br />
           <em className="text-[var(--color-accent)] not-italic">your Venue.</em>
         </h2>

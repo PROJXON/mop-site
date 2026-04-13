@@ -140,7 +140,7 @@ const ACTIVATIONS: ActivationProps[] = [
 const SponsorPage = () => (
   <div
     style={{
-      background: "var(--color-background-2)",
+      background: "white",
     }}
   >
     {/* CTA section */}

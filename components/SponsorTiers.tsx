@@ -12,34 +12,32 @@ interface TierProps {
 function TierCard({ tier }: { tier: TierProps }) {
   return (
     <div
-      className={`relative flex flex-col rounded-sm border transition-all duration-300 hover:-translate-y-1 ${
-        tier.highlight
-          ? "border-white/50 bg-gold10 shadow-[0_0_40px_rgba(212,175,55,0.15)]"
-          : "border-white/10 bg-white3 hover:border-white/70"
-      }`}
+      className={`relative flex flex-col rounded-sm border transition-all duration-300 hover:-translate-y-1 ${tier.highlight
+        ? "border-black/50 bg-black/10 shadow-[0_0_40px_rgba(212,175,55,0.15)]"
+        : "border-black/10 bg-black/5 hover:border-black/70"
+        }`}
     >
       {tier.badge && (
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-          <span className="bg-primary text-black text-xs font-bold tracking-widest uppercase px-4 py-1">
+          <span className="bg-[var(--color-accent)] text-white text-xs font-bold tracking-widest uppercase px-4 py-1">
             {tier.badge}
           </span>
         </div>
       )}
       <div className="p-8 border-b border-white10">
         <p
-          className={`text-xs tracking-[0.3em] uppercase mb-3 ${
-            tier.highlight ? "text-primary/70" : "text-white40"
-          } lg:text-sm`}
+          className={`text-xs tracking-[0.3em] uppercase mb-3 ${tier.highlight ? "text-black/80" : "text-black/60"
+            } lg:text-sm`}
         >
           {tier.name}
         </p>
-        <p className="font-display text-5xl text-white">{tier.price}</p>
-        <p className="text-white30 text-sm mt-1">one-time investment</p>
+        <p className="font-display text-5xl text-black">{tier.price}</p>
+        <p className="text-black/50 text-sm mt-1">one-time investment</p>
       </div>
-      <ul className="p-8 flex-1 space-y-3">
+      <ul className="px-8 py-2 flex-1 space-y-3">
         {tier.perks.map((perk, i) => (
-          <li key={i} className="flex gap-3 text-sm text-white70">
-            <span className={tier.highlight ? "text-gold" : "text-white30"}>
+          <li key={i} className="flex gap-3 text-sm text-black70">
+            <span className={tier.highlight ? "text-black" : "text-black/70"}>
               ✦
             </span>
             {perk}
@@ -50,11 +48,10 @@ function TierCard({ tier }: { tier: TierProps }) {
         <a
           href={tier.paymentLink}
           target="_blank"
-          className={`block w-full text-center py-3.5 text-sm font-bold tracking-widest uppercase transition-all duration-200 ${
-            tier.highlight
-              ? "border border-white/50 text-white hover:border-primary/50 hover:text-primary"
-              : "border text-white border-white/20 hover:border-primary/50 hover:text-primary"
-          }`}
+          className={`block w-full text-center py-3.5 text-sm font-bold tracking-widest uppercase transition-all duration-200 ${tier.highlight
+            ? "border border-black/50 text-black hover:border-[var(--color-accent)]/50 hover:text-white hover:bg-[var(--color-accent)]/80"
+            : "border text-black border-black/20 hover:border-[var(--color-accent)]/50 hover:text-white hover:bg-[var(--color-accent)]/80"
+            }`}
         >
           Secure This Tier
         </a>
@@ -65,10 +62,10 @@ function TierCard({ tier }: { tier: TierProps }) {
 
 export const SponsorTiers: React.FC<{ tiers: TierProps[] }> = ({ tiers }) => {
   return (
-    <section className="bg-[#242424]/15 py-16" id="tiers">
+    <section className="py-8" style={{ background: "linear-gradient(180deg,#f8f9fb 0%,#eef1f5 100%)" }} id="tiers">
       <div className="text-center mb-16">
         <p className="section-label mb-4">Sponsorship Packages</p>
-        <h2 className="font-display text-[clamp(2.5rem,4vw,3.5rem)] font-light text-white">
+        <h2 className="font-display text-[clamp(2.5rem,4vw,3.5rem)] font-light text-black">
           Choose your <em className="text-gold">tier.</em>
         </h2>
       </div>
@@ -77,7 +74,7 @@ export const SponsorTiers: React.FC<{ tiers: TierProps[] }> = ({ tiers }) => {
           <TierCard key={tier.name} tier={tier} />
         ))}
       </div>
-      <p className="text-center text-white30 text-sm mt-8 tracking-wide">
+      <p className="text-center text-black/50 text-sm mt-8 tracking-wide">
         Custom packages available · Reach out to discuss
       </p>
     </section>

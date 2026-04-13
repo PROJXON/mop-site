@@ -55,7 +55,7 @@ function ActivationCard({
     <div
       className={`
         border border-white/10 p-6 sm:p-8 md:p-10 rounded-xl
-        bg-white/5 hover:border-white/20 transition-colors duration-300
+        bg-white/5 text-white hover:border-white/20 transition-colors duration-300
         opacity-0 translate-y-8
         ${animate ? "animate-fade-up" : ""}
       `}
@@ -71,7 +71,7 @@ function ActivationCard({
             key={i}
             className="flex gap-2 sm:gap-3 text-white/65 text-sm sm:text-base leading-relaxed"
           >
-            <span className="text-yellow-400/50 mt-0.5 shrink-0">—</span>
+            <span className="text-[var(--color-accent)]/50 mt-0.5 shrink-0">—</span>
             {item}
           </li>
         ))}
@@ -97,8 +97,8 @@ export default function ActivationsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="mx-auto px-4 sm:px-8 py-12 sm:pb-20">
-      <div className="text-center mb-10 sm:mb-16">
+    <section ref={sectionRef} className="mx-auto px-4 sm:px-8 py-12 sm:pb-20 bg-black/80">
+      <div className="text-center mb-5 sm:mb-8">
         <h2 className="font-display font-light text-white text-3xl sm:text-4xl md:text-5xl">
           How your brand <em className="text-primary not-italic">shows up.</em>
         </h2>

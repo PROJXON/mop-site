@@ -176,11 +176,11 @@ h6 {
 
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 0 20px rgba(224, 59, 47, 0.4);
   }
 
   50% {
-    box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 40px rgba(224, 59, 47, 0.4);
   }
 }
 

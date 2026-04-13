@@ -15,7 +15,7 @@ interface SpeakerSectionProps {
   speaker: Speaker;
 }
 
-const SpeakerSection: React.FC<SpeakerSectionProps> = ({ speaker }) => {
+const SpeakerCard: React.FC<SpeakerSectionProps> = ({ speaker }) => {
   return (
     <div className="py-16 px-4 lg:px-8 bg-black">
       <div className="container mx-auto max-w-6xl">
@@ -24,10 +24,10 @@ const SpeakerSection: React.FC<SpeakerSectionProps> = ({ speaker }) => {
           {/* Left — Image */}
           <div className="lg:w-2/5">
             <div className="relative">
-              {/* Gold corner accent — top left */}
-              <div className="absolute -top-3 -left-3 w-16 h-16 border-t-2 border-l-2 border-[#D4AF37] rounded-tl-sm z-10 pointer-events-none" />
-              {/* Gold corner accent — bottom right */}
-              <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b-2 border-r-2 border-[#D4AF37] rounded-br-sm z-10 pointer-events-none" />
+              {/* red corner accent — top left */}
+              <div className="absolute -top-3 -left-3 w-16 h-16 border-t-2 border-l-2 border-accent rounded-tl-sm z-10 pointer-events-none" />
+              {/* red corner accent — bottom right */}
+              <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b-2 border-r-2 border-accent rounded-br-sm z-10 pointer-events-none" />
 
               <img
                 src={speaker.imageUrl}
@@ -43,8 +43,8 @@ const SpeakerSection: React.FC<SpeakerSectionProps> = ({ speaker }) => {
           {/* Right — Details */}
           <div className="lg:w-3/5 space-y-6">
 
-            {/* Gold overline */}
-            <p className="text-[#D4AF37] text-xs uppercase tracking-[0.35em]"
+            {/* red overline */}
+            <p className="text-accent text-xs uppercase tracking-[0.35em]"
               style={{ fontFamily: "var(--font-body)" }}>
               Featured Speaker
             </p>
@@ -57,12 +57,12 @@ const SpeakerSection: React.FC<SpeakerSectionProps> = ({ speaker }) => {
               {speaker.name}
             </h3>
 
-            {/* Gold divider */}
-            <div className="w-12 h-[2px] bg-[#D4AF37]" />
+            {/* red divider */}
+            <div className="w-12 h-[2px] bg-accent" />
 
             {/* Role / title / company */}
             <div className="space-y-1">
-              <p className="text-[#D4AF37] uppercase tracking-widest text-sm font-semibold"
+              <p className="text-accent uppercase tracking-widest text-sm font-semibold"
                 style={{ fontFamily: "var(--font-body)" }}>
                 {speaker.role}
               </p>
@@ -77,7 +77,7 @@ const SpeakerSection: React.FC<SpeakerSectionProps> = ({ speaker }) => {
             </div>
 
             {/* Description */}
-            <p className="text-white/70 text-base leading-relaxed border-l-2 border-[#D4AF37]/40 pl-5"
+            <p className="text-white/70 text-base leading-relaxed border-l-2 border-accent/40 pl-5"
               style={{ fontFamily: "var(--font-body)" }}>
               {speaker.description}
             </p>
@@ -90,9 +90,9 @@ const SpeakerSection: React.FC<SpeakerSectionProps> = ({ speaker }) => {
                 rel="noopener noreferrer"
                 className="
                   inline-flex items-center gap-3
-                  border border-[#D4AF37] text-[#D4AF37]
+                  border border-accent text-accent
                   px-6 py-3 text-xs uppercase tracking-[0.2em] font-semibold
-                  hover:bg-[#D4AF37] hover:text-black
+                  hover:bg-accent hover:text-black
                   transition-all duration-300
                 "
                 style={{ fontFamily: "var(--font-body)" }}
@@ -117,4 +117,4 @@ const SpeakerSection: React.FC<SpeakerSectionProps> = ({ speaker }) => {
   );
 };
 
-export default SpeakerSection;
+export default SpeakerCard;

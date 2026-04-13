@@ -11,6 +11,7 @@ interface VenueImage {
 
 interface VenueDetails {
   name: string;
+  area: string;
   date: string;
   time: string;
   timezone: string;
@@ -29,6 +30,7 @@ const VenueSection: React.FC = () => {
 
   const venue: VenueDetails = {
     name: "The Assembly by Kiln",
+    area: "UnCommons, Las Vegas",
     date: "March 7th, 2026",
     time: "5pm - 9pm",
     timezone: "PST",
@@ -89,17 +91,24 @@ const VenueSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-neutral-900/50 py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+    <section className="bg-[var(--color-primary)] px-4 sm:px-6">
+
+      {/* Subtle red accent line at top */}
+      <div className="w-24 mx-auto h-[2px] bg-[var(--color-accent)] mb-10 md:mb-14" />
+
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-10 md:mb-14 animate-fade-up">
-          <p className="section-label mb-3">Event Details</p>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-white mb-2">
+          <p className="section-label mb-3">Venue Details</p>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-black mb-2">
             Where we gather.
           </h2>
-          <p className="text-white/60 text-sm sm:text-base max-w-2xl mx-auto">
-            A thoughtfully curated venue in the heart of Las Vegas, designed for
-            meaningful connections and premium experiences.
+          <p className="text-black/60 text-sm sm:text-base mx-auto">
+            The Assembly by Kiln isn't your average event venue, it's a space built for exactly the kind of gathering MOP is designed to be. Nestled within UnCommons in the heart of Las Vegas, The Assembly blends modern design with a warm, community-driven atmosphere that makes real conversation feel natural.
+
+            From the open-air courtyard to the full-service bar, every detail of the space invites you to slow down, look up from your phone, and actually connect. It's the kind of place where a quick introduction turns into a 30-minute conversation  and that's by design.
+
+            This is where Momentum comes to life on March 7th. Come for the network, stay for the energy.
           </p>
         </div>
 
@@ -116,9 +125,8 @@ const VenueSection: React.FC = () => {
               {venue.images.map((image, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-                    index === currentImageIndex ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${index === currentImageIndex ? "opacity-100" : "opacity-0"
+                    }`}
                 >
                   <Image
                     src={image.url}
@@ -186,11 +194,10 @@ const VenueSection: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => handleDotClick(index)}
-                  className={`transition-all duration-300 rounded-full ${
-                    index === currentImageIndex
-                      ? "bg-yellow-400 w-3 h-3"
-                      : "bg-white/30 hover:bg-white/50 w-2.5 h-2.5"
-                  }`}
+                  className={`transition-all duration-300 rounded-full ${index === currentImageIndex
+                    ? "bg-yellow-400 w-3 h-3"
+                    : "bg-white/30 hover:bg-white/50 w-2.5 h-2.5"
+                    }`}
                   aria-label={`Go to image ${index + 1}`}
                   aria-current={index === currentImageIndex}
                 />
@@ -200,24 +207,29 @@ const VenueSection: React.FC = () => {
 
           {/* Venue Details - Right on desktop, bottom on mobile */}
           <div className="flex flex-col justify-start">
-            <div className="bg-white/5 border border-white/10 rounded-xl p-6 sm:p-8 hover:border-white/20 transition-colors duration-300">
+            <div className="bg-black/5 border border-white/10 rounded-xl p-6 sm:p-8 hover:border-white/20 transition-colors duration-300">
               {/* Venue Name */}
-              <h3 className="font-display text-2xl sm:text-3xl text-white mb-6">
-                {venue.name}
-              </h3>
+              <div className="flex flex-col gap-2 mb-6" >
+                <h3 className="font-display text-2xl sm:text-3xl text-black">
+                  {venue.name}
+                </h3>
+                <span className="text-[var(--color-accent)]/70 text-sm sm:text-base font-medium">
+                  {venue.area}
+                </span>
+              </div>
 
               {/* Event Details */}
               <div className="space-y-4 mb-8">
                 {/* Date */}
                 <div className="flex gap-3 items-start">
-                  <span className="text-yellow-400 mt-0.5 text-lg flex-shrink-0">
+                  <span className="text-primary mt-0.5 text-lg flex-shrink-0">
                     📅
                   </span>
                   <div>
-                    <p className="text-white/70 text-xs uppercase tracking-widest font-medium">
+                    <p className="text-[var(--color-surface)]/70 text-xs uppercase tracking-widest font-medium">
                       Date
                     </p>
-                    <p className="text-white text-sm sm:text-base font-medium">
+                    <p className="text-[var(--color-surface)] text-sm sm:text-base font-medium">
                       {venue.date}
                     </p>
                   </div>
@@ -225,14 +237,14 @@ const VenueSection: React.FC = () => {
 
                 {/* Time */}
                 <div className="flex gap-3 items-start">
-                  <span className="text-yellow-400 mt-0.5 text-lg flex-shrink-0">
+                  <span className="text-primary mt-0.5 text-lg flex-shrink-0">
                     🕐
                   </span>
                   <div>
-                    <p className="text-white/70 text-xs uppercase tracking-widest font-medium">
+                    <p className="text-[var(--color-surface)]/70 text-xs uppercase tracking-widest font-medium">
                       Time
                     </p>
-                    <p className="text-white text-sm sm:text-base font-medium">
+                    <p className="text-[var(--color-surface)] text-sm sm:text-base font-medium">
                       {venue.time} {venue.timezone}
                     </p>
                   </div>
@@ -240,14 +252,14 @@ const VenueSection: React.FC = () => {
 
                 {/* Address */}
                 <div className="flex gap-3 items-start">
-                  <span className="text-yellow-400 mt-0.5 text-lg flex-shrink-0">
+                  <span className="text-primary mt-0.5 text-lg flex-shrink-0">
                     📍
                   </span>
                   <div>
-                    <p className="text-white/70 text-xs uppercase tracking-widest font-medium">
+                    <p className="text-[var(--color-surface)]/70 text-xs uppercase tracking-widest font-medium">
                       Location
                     </p>
-                    <p className="text-white text-sm sm:text-base font-medium">
+                    <p className="text-[var(--color-surface)] text-sm sm:text-base font-medium">
                       {venue.address}
                     </p>
                   </div>
@@ -263,7 +275,7 @@ const VenueSection: React.FC = () => {
                   href={venue.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-center gap-2 bg-yellow-400/10 border border-yellow-400/30 hover:border-yellow-400/70 hover:bg-yellow-400/20 text-yellow-400 py-2.5 px-4 rounded-lg transition-all duration-200 text-sm font-medium"
+                  className="group flex items-center justify-center gap-2 bg-black/5 border border-black/30 hover:border-[var(--color-accent)]/70 hover:bg-[var(--color-accent)]/20 text-black py-2.5 px-4 rounded-lg transition-all duration-200 text-sm font-medium"
                 >
                   Visit Website
                   <svg
@@ -286,7 +298,7 @@ const VenueSection: React.FC = () => {
                     href={venue.linkedinUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/10 text-white py-2.5 px-3 rounded-lg transition-all duration-200 text-sm font-medium"
+                    className="flex-1 flex items-center justify-center gap-2 bg-black/5 border border-black/10 hover:border-[var(--color-accent)]/20 hover:bg-[var(--color-accent)]/10 text-[#0a66c2] py-2.5 px-3 rounded-lg transition-all duration-200 text-sm font-medium"
                     aria-label="Visit LinkedIn"
                   >
                     <svg
@@ -301,7 +313,7 @@ const VenueSection: React.FC = () => {
                     href={venue.instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/10 text-white py-2.5 px-3 rounded-lg transition-all duration-200 text-sm font-medium"
+                    className="flex-1 flex items-center justify-center gap-2 bg-black/5 border border-black/10 hover:border-[var(--color-accent)]/20 hover:bg-[var(--color-accent)]/10 text-black py-2.5 px-3 rounded-lg transition-all duration-200 text-sm font-medium"
                     aria-label="Visit Instagram"
                   >
                     <svg
@@ -318,6 +330,10 @@ const VenueSection: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Subtle red accent line at bottom */}
+      <div className="h-12" />
+      <div className="w-24 mx-auto h-[2px] bg-[var(--color-accent)]" />
     </section>
   );
 };

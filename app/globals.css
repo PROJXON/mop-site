@@ -1,16 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap");
 
 @import "tailwindcss";
+
 @plugin "daisyui" {
   themes: light --default, dark, dracula;
 }
 
 :root {
-  --color-primary: #ffd700;
-  --color-primary-hover: #f4c430;
-  --color-primary-active: #e6b800;
+  --color-primary: #ffffff;
+  --color-primary-hover: #f1f1f1;
+  --color-primary-active: #ffffff/60;
   --color-primary-content: #000000;
-  --color-secondary: #111111;
+  --color-secondary: #060605;
+  --color-accent: #e03b2f;
   --color-secondary-content: #ffffff;
   --color-background: #0d0d0d;
   --color-background-2: #928148;
@@ -49,15 +51,19 @@ h6 {
 .text-gold {
   color: var(--gold);
 }
+
 .bg-gold {
   background-color: var(--gold);
 }
+
 .border-gold {
   border-color: var(--gold);
 }
+
 .to-gold {
   --tw-gradient-to: var(--gold);
 }
+
 .from-gold {
   --tw-gradient-from: var(--gold);
 }
@@ -65,42 +71,55 @@ h6 {
 .bg-white3 {
   background: rgba(255, 255, 255, 0.03);
 }
+
 .bg-gold5 {
   background: rgba(212, 175, 55, 0.05);
 }
+
 .bg-gold10 {
   background: rgba(212, 175, 55, 0.1);
 }
+
 .bg-gold90 {
   background: rgba(212, 175, 55, 0.9);
 }
+
 .border-white10 {
   border-color: rgba(255, 255, 255, 0.1);
 }
+
 .border-white20 {
   border-color: rgba(255, 255, 255, 0.2);
 }
+
 .text-white30 {
   color: rgba(255, 255, 255, 0.3);
 }
+
 .text-white40 {
   color: rgba(255, 255, 255, 0.4);
 }
+
 .text-white50 {
   color: rgba(255, 255, 255, 0.5);
 }
+
 .text-white60 {
   color: rgba(255, 255, 255, 0.6);
 }
+
 .text-white70 {
   color: rgba(255, 255, 255, 0.7);
 }
+
 .text-gold60 {
   color: rgba(212, 175, 55, 0.6);
 }
+
 .opacity40 {
   opacity: 0.4;
 }
+
 .opacity60 {
   opacity: 0.6;
 }
@@ -112,11 +131,9 @@ h6 {
 }
 
 .hero-glow {
-  background: radial-gradient(
-    ellipse 60% 50% at 50% 0%,
-    rgba(212, 175, 55, 0.12) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(ellipse 60% 50% at 50% 0%,
+      rgba(212, 175, 55, 0.12) 0%,
+      transparent 70%);
 }
 
 @keyframes fade-up {
@@ -124,6 +141,7 @@ h6 {
     opacity: 0;
     transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -133,28 +151,34 @@ h6 {
 .animate-fade-up {
   animation: fade-up 0.8s ease forwards;
 }
+
 .delay1 {
   animation-delay: 0.15s;
   opacity: 0;
 }
+
 .delay2 {
   animation-delay: 0.3s;
   opacity: 0;
 }
+
 .delay3 {
   animation-delay: 0.45s;
   opacity: 0;
 }
+
 .delay4 {
   animation-delay: 0.6s;
   opacity: 0;
 }
 
 @keyframes pulse-glow {
+
   0%,
   100% {
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
   }
+
   50% {
     box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
   }
@@ -186,9 +210,11 @@ h6 {
 ::-webkit-scrollbar {
   width: 4px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--black);
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(212, 175, 55, 0.4);
   border-radius: 2px;

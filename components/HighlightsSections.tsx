@@ -166,12 +166,12 @@ function PhotoCarousel() {
 
 // ─── Main Export ──────────────────────────────────────────────────────────────
 
-export default function HighlightsSections() {
+export default function HighlightsSections({ eventLink }: { eventLink: string }) {
   return (
     <section
       aria-label="Event Highlights"
       className="px-6 sm:px-12 lg:px-20 py-16 sm:py-24"
-      style={{ background: "var(--color-background-2)" }}
+      style={{ background: "var(--color-surface-2)" }}
     >
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 lg:items-center">
         {/* Photo carousel */}
@@ -218,10 +218,10 @@ export default function HighlightsSections() {
 
           <div className="flex gap-4 flex-wrap pt-2">
             <a
-              href="https://www.eventbrite.com"
+              href={eventLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-pulse hover:scale-105 transition-transform"
+              className="drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] hover:scale-105 transition-transform"
               style={{
                 background: "var(--color-primary)",
                 color: "#000",

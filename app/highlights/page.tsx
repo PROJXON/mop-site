@@ -9,7 +9,7 @@ const HighlightsPage = () => (
   <div>
     <HighlightsHero />
     <WhoAttended />
-    <HighlightsSections />
+    <HighlightsSections eventLink="https://www.eventbrite.com/e/momentum-office-party-networking-las-vegas-spring-social-tickets-1980690107430?aff=oddtdtcreator" />
   </div>
 );
 

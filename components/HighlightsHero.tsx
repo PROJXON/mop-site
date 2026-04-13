@@ -94,10 +94,9 @@ export default function HighlightsHero({
               href="https://www.eventbrite.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-pulse hover:scale-105 transition-transform"
+              // accent color shadow
+              className="bg-white text-black hover:scale-105 hover:bg-[var(--color-accent)] hover:text-white transition-transform shadow-[var(--color-accent)]"
               style={{
-                background: "var(--color-primary)",
-                color: "#000",
                 padding: "0.9rem 2.25rem",
                 fontWeight: 700,
                 fontSize: "0.75rem",
@@ -111,10 +110,8 @@ export default function HighlightsHero({
             </a>
             <a
               href="/partner/sponsor"
-              className="hover:scale-105 transition-transform"
+              className="bg-transparent border border-white text-white hover:scale-105 transition-transform hover:bg-[var(--color-accent)] hover:text-white hover:border-transparent"
               style={{
-                border: "1px solid rgba(255,255,255,0.25)",
-                color: "rgba(255,255,255,0.8)",
                 padding: "0.9rem 2.25rem",
                 fontWeight: 500,
                 fontSize: "0.75rem",
@@ -140,7 +137,6 @@ export default function HighlightsHero({
             {[
               { value: "100+", label: "Attendees" },
               { value: "15K+", label: "Digital Reach" },
-              { value: "Las Vegas", label: "Nevada" },
             ].map((stat) => (
               <div key={stat.label}>
                 <p

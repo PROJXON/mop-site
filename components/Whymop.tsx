@@ -92,7 +92,7 @@ function AnimatedAccordionItem({
         open={defaultOpen}
         className={`
           group
-          border border-[#D4AF37]/20 rounded-lg shadow-sm overflow-hidden
+          border border-[var(--color-secondary)]/20 rounded-lg shadow-sm overflow-hidden
           bg-white
           relative
           transition-shadow duration-300
@@ -102,7 +102,7 @@ function AnimatedAccordionItem({
         {/* Animated gold underline — sits at the bottom of the summary */}
         <div
           className="
-            absolute bottom-0 left-0 h-[2px] w-0 bg-[#D4AF37]
+            absolute bottom-0 left-0 h-[2px] w-0 bg-[var(--color-secondary)]
             group-hover:w-full
             transition-all duration-500 ease-out
             pointer-events-none z-10
@@ -110,10 +110,10 @@ function AnimatedAccordionItem({
         />
 
         {/* Summary row */}
-        <summary className="flex items-center justify-between gap-4 px-8 py-6 cursor-pointer list-none hover:bg-[#D4AF37]/5 transition-colors duration-200">
+        <summary className="flex items-center justify-between gap-4 px-8 py-6 cursor-pointer list-none hover:bg-[var(--color-secondary)]/5 transition-colors duration-200">
           <div className="flex items-center gap-4">
             <span
-              className="text-[#D4AF37] text-sm uppercase tracking-widest"
+              className="text-secondary/50 text-sm uppercase tracking-widest"
               style={{ fontFamily: "var(--font-body)" }}
             >
               0{index + 1}
@@ -127,7 +127,7 @@ function AnimatedAccordionItem({
           </div>
 
           {/* Chevron */}
-          <span className="text-[#D4AF37] transition-transform duration-300 group-open:rotate-180">
+          <span className="text-secondary/50 transition-transform duration-300 group-open:rotate-180">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path
                 d="M5 7.5L10 12.5L15 7.5"
@@ -148,7 +148,7 @@ function AnimatedAccordionItem({
             {/* Text + bullets */}
             <div className="space-y-5">
               <p
-                className="text-[#2B2B2B]/70 leading-relaxed"
+                className="text-secondary/70 leading-relaxed"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 {item.description}
@@ -157,10 +157,10 @@ function AnimatedAccordionItem({
                 {item.bullets.map((bullet) => (
                   <li
                     key={bullet}
-                    className="flex items-start gap-3 text-[#2B2B2B]/80 text-sm"
+                    className="flex items-start gap-3 text-secondary/80 text-sm"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
-                    <span className="mt-[5px] w-1.5 h-1.5 rounded-full bg-[#D4AF37] shrink-0" />
+                    <span className="mt-[5px] w-1.5 h-1.5 rounded-full bg-black shrink-0" />
                     {bullet}
                   </li>
                 ))}
@@ -188,20 +188,20 @@ function AnimatedAccordionItem({
 // ─── Section ─────────────────────────────────────────────────────────────────
 const WhyAttendMOP: React.FC = () => {
   return (
-    <section className="relative py-20 px-6 bg-[var(--color-background-2)]">
-      {/* Top gold accent */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[#D4AF37]" />
+    <section className="relative py-20 px-6 bg-white">
+      {/* Subtle red accent line at top */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[var(--color-accent)]" />
 
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <p
-          className="text-[#D4AF37] text-sm uppercase tracking-[0.2em] text-center mb-4"
+          className="text-secondary text-sm uppercase tracking-[0.2em] text-center mb-4"
           style={{ fontFamily: "var(--font-body)" }}
         >
           The Experience
         </p>
         <h2
-          className="text-4xl sm:text-5xl text-[#2B2B2B] text-center mb-16"
+          className="text-4xl sm:text-5xl text-secondary text-center mb-16"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Why Attend MOP?
@@ -220,8 +220,9 @@ const WhyAttendMOP: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom gold accent */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[#D4AF37]" />
+      {/* Subtle red accent line at bottom */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[var(--color-accent)]" />
+
     </section>
   );
 };

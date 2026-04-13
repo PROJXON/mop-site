@@ -81,12 +81,12 @@ function MobileAgendaItem({ item }: { item: AgendaItem }) {
         <li className="relative flex gap-4 pl-10">
             {/* Dot on the left line */}
             <div className="absolute left-0 top-1 flex items-center justify-center w-8">
-                <div className="w-3 h-3 rounded-full border-2 border-[#D4AF37] bg-[#1a1a1a]" />
+                <div className="w-3 h-3 rounded-full border-2 border-[var(--color-accent)] bg-[#1a1a1a]" />
             </div>
 
             {/* Card content */}
             <div className="flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                <p className="text-xs font-bold text-[#D4AF37] mb-0.5">{item.time}</p>
+                <p className="text-xs font-bold text-[var(--color-accent)] mb-0.5">{item.time}</p>
                 <p className="text-xs italic text-white/50 mb-2">{item.label}</p>
                 <p
                     className="text-sm font-bold text-white mb-1"
@@ -125,10 +125,10 @@ function DesktopAgendaItem({
             >
                 {isEven && (
                     <div
-                        className={`text-right transition-all duration-300 ${hovered ? "translate-x-[-4px]" : ""
+                        className={`text-right transition-all duration-300 ${hovered ? "translate-x-[-4px] text-[var(--color-accent)]" : "text-white"
                             }`}
                     >
-                        <span className="block text-base font-bold text-[#D4AF37]">
+                        <span className="block text-base font-bold">
                             {item.time}
                         </span>
                         <span className="block text-sm italic text-white/60">
@@ -144,8 +144,8 @@ function DesktopAgendaItem({
                     onMouseEnter={() => setHovered(true)}
                     onMouseLeave={() => setHovered(false)}
                     className={`w-5 h-5 rounded-full border-2 transition-all duration-300 cursor-pointer ${hovered
-                            ? "bg-[#D4AF37] border-[#D4AF37] scale-125 shadow-[0_0_12px_rgba(212,175,55,0.7)]"
-                            : "bg-transparent border-[#D4AF37]/60"
+                        ? "bg-[var(--color-accent)] border-[var(--color-accent)] scale-125 shadow-[0_0_12px_rgba(212,175,55,0.7)]"
+                        : "bg-transparent border-[var(--color-primary)]/60"
                         }`}
                 />
             </div>
@@ -157,10 +157,10 @@ function DesktopAgendaItem({
             >
                 {!isEven && (
                     <div
-                        className={`text-left transition-all duration-300 ${hovered ? "translate-x-[4px]" : ""
+                        className={`text-left transition-all duration-300 ${hovered ? "translate-x-[4px] text-[var(--color-accent)]" : "text-white"
                             }`}
                     >
-                        <span className="block text-base font-bold text-[#D4AF37]">
+                        <span className="block text-base font-bold">
                             {item.time}
                         </span>
                         <span className="block text-sm italic text-white/60">
@@ -175,18 +175,18 @@ function DesktopAgendaItem({
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
                 className={`absolute ${isEven
-                        ? "right-0 left-[calc(50%+28px)]"
-                        : "left-0 right-[calc(50%+28px)]"
+                    ? "right-0 left-[calc(50%+28px)]"
+                    : "left-0 right-[calc(50%+28px)]"
                     } cursor-pointer`}
             >
                 <div
                     className={`rounded-xl border px-5 py-4 transition-all duration-300 ${hovered
-                            ? "bg-[#D4AF37]/10 border-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.25)] -translate-y-1"
-                            : "bg-white/5 border-white/10"
+                        ? "bg-[var(--color-accent)]/10 border-[var(--color-accent)] shadow-[0_0_20px_rgba(212,175,55,0.25)] -translate-y-1"
+                        : "bg-white/5 border-white/10"
                         }`}
                 >
                     <p
-                        className={`text-base font-bold mb-0.5 transition-colors duration-300 ${hovered ? "text-[#D4AF37]" : "text-white"
+                        className={`text-base font-bold mb-0.5 transition-colors duration-300 ${hovered ? "text-white" : "text-white/60"
                             }`}
                         style={{ fontFamily: "var(--font-heading)" }}
                     >
@@ -207,49 +207,59 @@ function DesktopAgendaItem({
 // ─── Main export ──────────────────────────────────────────────────────────────
 export default function Timeline() {
     return (
-        <section id="timeline" className="py-16 px-4 bg-[#1a1a1a]">
-            {/* Header */}
-            <div className="text-center mb-14">
-                <h2
-                    className="text-4xl sm:text-5xl text-white mb-3"
-                    style={{ fontFamily: "var(--font-heading)" }}
-                >
-                    Event Timeline
-                </h2>
-                <div className="flex items-center justify-center gap-3 my-4">
-                    <div className="w-10 h-[1px] bg-[#D4AF37]" />
-                    <div className="w-2 h-2 rounded-full bg-[#D4AF37]" />
-                    <div className="w-10 h-[1px] bg-[#D4AF37]" />
+        <section id="timeline" className="px-4 bg-[var(--color-surface)]">
+            {/* Subtle red accent line at top */}
+            <div className="w-24 mx-auto h-[2px] bg-[var(--color-accent)]" />
+
+            <div className="pt-10 pb-16">
+                {/* Header */}
+                <div className="text-center mb-14 ">
+                    <h2
+                        className="text-4xl sm:text-5xl text-white mb-3"
+                        style={{ fontFamily: "var(--font-heading)" }}
+                    >
+                        Event Timeline
+                    </h2>
+                    <div className="flex items-center justify-center gap-3 my-4">
+                        <div className="w-10 h-[1px] bg-[var(--color-accent)]" />
+                        <div className="w-2 h-2 rounded-full bg-[var(--color-accent)]" />
+                        <div className="w-10 h-[1px] bg-[var(--color-accent)]" />
+                    </div>
+                    <p
+                        className="text-white/60 text-lg italic"
+                        style={{ fontFamily: "var(--font-body)" }}
+                    >
+                        An outline of the exciting activities planned for the evening
+                    </p>
                 </div>
-                <p
-                    className="text-white/60 text-lg italic"
-                    style={{ fontFamily: "var(--font-body)" }}
-                >
-                    An outline of the exciting activities planned for the evening
-                </p>
+
+                {/* ── Mobile layout (< md) ── */}
+                <div className="md:hidden max-w-lg mx-auto relative">
+                    {/* Left vertical line */}
+                    <div className="absolute left-[15px] top-0 bottom-0 w-[2px] bg-[#D4AF37]/20" />
+                    <ul className="flex flex-col gap-6">
+                        {agendaItems.map((item, index) => (
+                            <MobileAgendaItem key={index} item={item} />
+                        ))}
+                    </ul>
+                </div>
+
+                {/* ── Desktop layout (≥ md) ── */}
+                <div className="hidden md:block max-w-3xl mx-auto relative">
+                    {/* Center vertical line */}
+                    <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-[#D4AF37]/20" />
+                    <ul className="flex flex-col gap-8">
+                        {agendaItems.map((item, index) => (
+                            <DesktopAgendaItem key={index} item={item} index={index} />
+                        ))}
+                    </ul>
+                </div>
+
             </div>
 
-            {/* ── Mobile layout (< md) ── */}
-            <div className="md:hidden max-w-lg mx-auto relative">
-                {/* Left vertical line */}
-                <div className="absolute left-[15px] top-0 bottom-0 w-[2px] bg-[#D4AF37]/20" />
-                <ul className="flex flex-col gap-6">
-                    {agendaItems.map((item, index) => (
-                        <MobileAgendaItem key={index} item={item} />
-                    ))}
-                </ul>
-            </div>
+            {/* Subtle red accent line at bottom */}
+            <div className="w-24 mx-auto h-[2px] bg-[var(--color-accent)]" />
 
-            {/* ── Desktop layout (≥ md) ── */}
-            <div className="hidden md:block max-w-3xl mx-auto relative">
-                {/* Center vertical line */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-[#D4AF37]/20" />
-                <ul className="flex flex-col gap-8">
-                    {agendaItems.map((item, index) => (
-                        <DesktopAgendaItem key={index} item={item} index={index} />
-                    ))}
-                </ul>
-            </div>
         </section>
     );
 }

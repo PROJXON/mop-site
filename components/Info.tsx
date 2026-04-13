@@ -1,4 +1,5 @@
 import React from "react";
+import HighlightsVideo from "./HighlightsVideo";
 
 interface InfoProps {
   title: string;
@@ -14,21 +15,21 @@ const Info: React.FC<InfoProps> = ({
   imageUrl,
 }) => {
   return (
-    <section className="relative isolate overflow-hidden bg-(--color-surface-2)/80 py-20 px-6">
-      {/* Subtle gold accent line at top */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[#D4AF37]" />
+    <section className="relative isolate overflow-hidden bg-white py-20 px-6">
+      {/* Subtle red accent line at top */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[var(--color-accent)]" />
 
       <div className="max-w-7xl mx-auto">
         {/* Section label */}
         <p
-          className="text-[#D4AF37] text-sm uppercase tracking-[0.2em] text-center mb-4"
+          className="text-[var(--color-secondary)] text-sm uppercase tracking-[0.2em] text-center mb-4"
           style={{ fontFamily: "var(--font-body)" }}
         >
           About the Event
         </p>
 
         <h2
-          className="text-4xl sm:text-5xl text-white text-center mb-16"
+          className="text-4xl sm:text-5xl text-[var(--color-secondary)] text-center mb-16"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           {title}
@@ -37,17 +38,17 @@ const Info: React.FC<InfoProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
           {/* Text — 2 cols */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Gold vertical bar accent */}
-            <div className="border-l-4 border-[#D4AF37] pl-6 space-y-4">
+            {/* accent vertical bar accent */}
+            <div className="border-l-4 border-accent pl-6 space-y-4">
               <p
-                className="text-lg text-white/90 leading-relaxed"
+                className="text-lg text-[var(--color-secondary)]/90 leading-relaxed"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 {descriptionpt1}
               </p>
               {descriptionpt2 && (
                 <p
-                  className="text-lg text-white/70 leading-relaxed"
+                  className="text-lg text-[var(--color-secondary)]/70 leading-relaxed"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
                   {descriptionpt2}
@@ -56,11 +57,11 @@ const Info: React.FC<InfoProps> = ({
             </div>
 
             {/* Small decorative gold divider */}
-            <div className="flex items-center gap-3 pt-2">
-              <div className="w-8 h-[1px] bg-[#D4AF37]" />
-              <div className="w-2 h-2 rounded-full bg-[#D4AF37]" />
-              <div className="w-8 h-[1px] bg-[#D4AF37]" />
-            </div>
+            {/* <div className="flex items-center gap-3 pt-2">
+              <div className="w-8 h-[1px] bg-black" />
+              <div className="w-2 h-2 rounded-full bg-black" />
+              <div className="w-8 h-[1px] bg-black" />
+            </div> */}
           </div>
 
           {/* Image — 3 cols */}
@@ -82,8 +83,8 @@ const Info: React.FC<InfoProps> = ({
         </div>
       </div>
 
-      {/* Subtle gold accent line at bottom */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[#D4AF37]" />
+      {/* Subtle red accent line at bottom */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-[var(--color-accent)]" />
     </section>
   );
 };

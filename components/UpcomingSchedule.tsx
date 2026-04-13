@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 
+// ─── Types ─────────────────────────────────────────────────────────────────────
+
 type SocialLink = {
   label: string;
   href?: string;
@@ -9,7 +11,7 @@ type SocialLink = {
 type EventItem = {
   title?: string;
   date?: string;
-  sortKey?: string; // ISO-like date string for ordering
+  sortKey?: string;
   social?: SocialLink[];
 };
 
@@ -24,6 +26,8 @@ type YearSection = {
   cities: CityBlock[];
 };
 
+// ─── Data ──────────────────────────────────────────────────────────────────────
+
 const UPCOMING_SCHEDULE: YearSection[] = [
   {
     year: "2026",
@@ -34,36 +38,13 @@ const UPCOMING_SCHEDULE: YearSection[] = [
         events: [
           {
             title: `"Outdoor Mixer!"`,
-            date: "March 7th, 2026",
-            sortKey: "2026-03-07",
-            social: [
-              { label: "Link", href: "https://kiln.com/" },
-              {
-                label: "Instagram",
-                href: "https://www.instagram.com/kiln.co/",
-              },
-              {
-                label: "Facebook",
-                href: "https://www.facebook.com/gatheratkiln/",
-              },
-              {
-                label: "LinkedIn",
-                href: "https://www.linkedin.com/company/gatheratkiln/posts/?feedView=all",
-              },
-            ],
-          },
-          {
-            title: `"Outdoor Mixer!"`,
             date: "October 3th, 2026",
             sortKey: "2026-10-03",
             social: [
               { label: "Link", href: "https://www.wework.com/" },
               { label: "Instagram", href: "https://www.instagram.com/wework" },
               { label: "Facebook", href: "https://www.facebook.com/WeWork/" },
-              {
-                label: "LinkedIn",
-                href: "https://www.linkedin.com/company/wework/posts/?feedView=all",
-              },
+              { label: "LinkedIn", href: "https://www.linkedin.com/company/wework/posts/?feedView=all" },
             ],
           },
         ],
@@ -80,10 +61,7 @@ const UPCOMING_SCHEDULE: YearSection[] = [
               { label: "Link", href: "https://www.wework.com/" },
               { label: "Instagram", href: "https://www.instagram.com/wework" },
               { label: "Facebook", href: "https://www.facebook.com/WeWork/" },
-              {
-                label: "LinkedIn",
-                href: "https://www.linkedin.com/company/wework/posts/?feedView=all",
-              },
+              { label: "LinkedIn", href: "https://www.linkedin.com/company/wework/posts/?feedView=all" },
             ],
           },
         ],
@@ -98,18 +76,9 @@ const UPCOMING_SCHEDULE: YearSection[] = [
             sortKey: "2026-08-08",
             social: [
               { label: "Link", href: "https://kiln.com/" },
-              {
-                label: "Instagram",
-                href: "https://www.instagram.com/kiln.co/",
-              },
-              {
-                label: "Facebook",
-                href: "https://www.facebook.com/gatheratkiln/",
-              },
-              {
-                label: "LinkedIn",
-                href: "https://www.linkedin.com/company/gatheratkiln/posts/?feedView=all",
-              },
+              { label: "Instagram", href: "https://www.instagram.com/kiln.co/" },
+              { label: "Facebook", href: "https://www.facebook.com/gatheratkiln/" },
+              { label: "LinkedIn", href: "https://www.linkedin.com/company/gatheratkiln/posts/?feedView=all" },
             ],
           },
         ],
@@ -119,70 +88,25 @@ const UPCOMING_SCHEDULE: YearSection[] = [
   {
     year: "2027",
     cities: [
-      {
-        city: "Las Vegas",
-        imageUrl: "/images/upcoming/dummy1.png",
-        events: [
-          {
-            date: "March, 2027",
-            sortKey: "2027-03-01",
-          },
-        ],
-      },
-      {
-        city: "Los Angeles",
-        imageUrl: "/images/upcoming/dummy2.png",
-        events: [
-          {
-            date: "June, 2027",
-            sortKey: "2027-06-01",
-          },
-        ],
-      },
-      {
-        city: "Seattle",
-        imageUrl: "/images/upcoming/dummy3.png",
-        events: [
-          {
-            date: "August, 2027",
-            sortKey: "2027-08-01",
-          },
-        ],
-      },
+      { city: "Las Vegas", imageUrl: "/images/upcoming/dummy1.png", events: [{ date: "March, 2027", sortKey: "2027-03-01" }] },
+      { city: "Los Angeles", imageUrl: "/images/upcoming/dummy2.png", events: [{ date: "June, 2027", sortKey: "2027-06-01" }] },
+      { city: "Seattle", imageUrl: "/images/upcoming/dummy3.png", events: [{ date: "August, 2027", sortKey: "2027-08-01" }] },
     ],
   },
   {
     year: "2028",
     cities: [
-      {
-        city: "Las Vegas",
-        imageUrl: "/images/upcoming/dummy1.png",
-      },
-      {
-        city: "New York",
-        imageUrl: "/images/upcoming/dummy2.png",
-      },
-      {
-        city: "San Diego",
-        imageUrl: "/images/upcoming/dummy3.png",
-      },
+      { city: "Las Vegas", imageUrl: "/images/upcoming/dummy1.png" },
+      { city: "New York", imageUrl: "/images/upcoming/dummy2.png" },
+      { city: "San Diego", imageUrl: "/images/upcoming/dummy3.png" },
     ],
   },
   {
     year: "2029",
     cities: [
-      {
-        city: "London",
-        imageUrl: "/images/upcoming/dummy1.png",
-      },
-      {
-        city: "Athens",
-        imageUrl: "/images/upcoming/dummy2.png",
-      },
-      {
-        city: "Mumbai",
-        imageUrl: "/images/upcoming/dummy3.png",
-      },
+      { city: "London", imageUrl: "/images/upcoming/dummy1.png" },
+      { city: "Athens", imageUrl: "/images/upcoming/dummy2.png" },
+      { city: "Mumbai", imageUrl: "/images/upcoming/dummy3.png" },
     ],
   },
 ];
@@ -192,12 +116,146 @@ const FUTURE = UPCOMING_SCHEDULE.filter((y) => parseInt(y.year) > 2026);
 
 type Tab = "coming-up" | "future";
 
-const buttonBase =
-  "inline-block px-8 py-3 text-sm font-bold uppercase tracking-[0.15em] rounded transition-all duration-300 shadow-lg shadow-black/30 cursor-pointer";
-const buttonActive =
-  `${buttonBase} bg-primary text-black hover:bg-[#c9a227] hover:scale-105`;
-const buttonInactive =
-  `${buttonBase} bg-transparent text-primary border-2 border-primary hover:bg-primary/10 hover:scale-105`;
+// ─── Social badge ──────────────────────────────────────────────────────────────
+
+function SocialBadge({ link }: { link: SocialLink }) {
+  const base =
+    "inline-block px-3 py-1 text-[0.6rem] uppercase tracking-[0.15em] font-semibold border transition-all duration-200";
+  if (link.href) {
+    return (
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${base} border-[var(--color-primary)]/50 text-[var(--color-primary)] hover:bg-[var(--color-accent)] hover:text-white hover:border-[var(--color-accent)]`}
+        style={{ fontFamily: "var(--font-body)" }}
+      >
+        {link.label}
+      </a>
+    );
+  }
+  return (
+    <span
+      className={`${base} border-white/20 text-white/30 cursor-not-allowed`}
+      style={{ fontFamily: "var(--font-body)" }}
+    >
+      {link.label}
+    </span>
+  );
+}
+
+// ─── Editorial Card ────────────────────────────────────────────────────────────
+
+function EditorialCard({
+  city,
+  event,
+  yearLabel,
+}: {
+  city: CityBlock;
+  event: EventItem | null;
+  yearLabel: string;
+}) {
+  const isTBA = !event || (!event.title && !event.social);
+
+  return (
+    <article className="group relative overflow-hidden rounded-sm">
+      {/* Image layer */}
+      <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-[#111]">
+        {city.imageUrl ? (
+          <img
+            src={city.imageUrl}
+            alt={`${city.city} Momentum Office Party`}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          />
+        ) : (
+          /* Fallback: geometric dark tile */
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "repeating-linear-gradient(45deg, #111 0px, #111 10px, #1a1a1a 10px, #1a1a1a 20px)",
+            }}
+          />
+        )}
+
+        {/* Gradient overlay — heavier at bottom for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+
+        {/* Gold top accent line */}
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+        {/* TBA overlay */}
+        {isTBA && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="border border-white/10 px-6 py-3 text-center backdrop-blur-sm">
+              <p
+                className="text-white/30 text-[0.6rem] uppercase tracking-[0.4em]"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                Details TBA
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Content overlay */}
+        <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+          {/* City + year */}
+          <div className="flex items-end justify-between mb-2">
+            <h3
+              className="text-white text-2xl sm:text-3xl font-light leading-tight"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              {city.city}
+            </h3>
+          </div>
+
+          {/* Gold rule */}
+          <div className="w-8 h-[1px] bg-[var(--color-accent)] mb-3" />
+
+          {event && (
+            <div className="space-y-2">
+              {event.title && (
+                <p
+                  className="text-white/90 text-base italic"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  {event.title}
+                </p>
+              )}
+              {event.date && (
+                <p
+                  className="text-white/50 text-xs uppercase tracking-[0.2em]"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  {event.date}
+                </p>
+              )}
+              {event.social && event.social.length > 0 && (
+                <div className="flex flex-wrap gap-2 pt-1">
+                  {event.social.map((s) => (
+                    <SocialBadge key={s.label} link={s} />
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {!event && (
+            <p
+              className="text-white/40 text-xs leading-relaxed"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Dates and themes to be announced.
+            </p>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+// ─── Year block renderer ───────────────────────────────────────────────────────
 
 function renderEntries(sections: YearSection[]) {
   return sections.map((section) => {
@@ -219,75 +277,26 @@ function renderEntries(sections: YearSection[]) {
 
     return (
       <div key={section.year} className="space-y-6">
-        <h2 className="text-2xl font-semibold border-l-4 border-primary pl-3">
-          {section.year}
-        </h2>
-        <div className="grid gap-6 md:grid-cols-2">
-          {entries.map(({ city, event }, idx) => (
-            <article
-              key={`${section.year}-${city.city}-${event?.sortKey ?? idx}`}
-              className="card bg-base-200 shadow-sm border border-base-300/60"
-            >
-              {city.imageUrl && (
-                <figure className="h-40 w-full overflow-hidden rounded-t-2xl">
-                  <img
-                    src={city.imageUrl}
-                    alt={`${city.city} Momentum Office Party location`}
-                    className="h-full w-full object-cover"
-                  />
-                </figure>
-              )}
-              <div className="card-body space-y-3">
-                <h3 className="text-xl font-semibold">{city.city}</h3>
+        {/* Year label */}
+        <div className="flex items-center gap-4">
+          <span
+            className="text-[var(--color-accent)] text-xl uppercase tracking-[0.4em]"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            {section.year}
+          </span>
+          <div className="flex-1 h-[1px] bg-white/10" />
+        </div>
 
-                {event ? (
-                  <div className="rounded-lg bg-base-100/80 border border-base-300 p-3 space-y-1">
-                    {event.title && (
-                      <p className="font-medium">{event.title}</p>
-                    )}
-                    {event.date && (
-                      <p className="text-sm text-base-content/70">
-                        {event.date}
-                      </p>
-                    )}
-                    {event.social && event.social.length > 0 && (
-                      <div className="pt-1">
-                        <div className="text-xs uppercase tracking-wide text-base-content/60 mb-1">
-                          Social
-                        </div>
-                        <div className="flex flex-wrap gap-2">
-                          {event.social.map((s) =>
-                            s.href ? (
-                              <a
-                                key={s.label}
-                                href={s.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-xs btn-outline btn-primary"
-                              >
-                                {s.label}
-                              </a>
-                            ) : (
-                              <span
-                                key={s.label}
-                                className="btn btn-xs btn-outline btn-primary btn-disabled"
-                              >
-                                {s.label}
-                              </span>
-                            )
-                          )}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <p className="text-sm text-base-content/70">
-                    Details to be announced. Stay tuned for dates and
-                    mixer themes in {city.city}.
-                  </p>
-                )}
-              </div>
-            </article>
+        {/* Cards grid */}
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {entries.map(({ city, event }, idx) => (
+            <EditorialCard
+              key={`${section.year}-${city.city}-${event?.sortKey ?? idx}`}
+              city={city}
+              event={event}
+              yearLabel={section.year}
+            />
           ))}
         </div>
       </div>
@@ -295,40 +304,81 @@ function renderEntries(sections: YearSection[]) {
   });
 }
 
+// ─── Main Component ────────────────────────────────────────────────────────────
+
 const UpcomingSchedule: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>("coming-up");
 
   return (
-    <section className="py-12 lg:py-16 bg-base-100">
-      <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
-        <header className="mb-10 text-center">
-          <h1 className="text-3xl lg:text-4xl font-bold tracking-tight mb-2">
-            Upcoming
+    <section
+      className="py-16 lg:py-24"
+      style={{ background: "var(--color-background)" }}
+    >
+      <div className="container mx-auto px-4 lg:px-8 max-w-6xl">
+
+        {/* Header */}
+        <header className="mb-12 text-center">
+          {/* Gold overline */}
+          <p
+            className="text-[var(--color-primary)] text-[0.65rem] uppercase tracking-[0.4em] mb-4"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            Momentum Office Party Roadmap
+          </p>
+
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-tight mb-4"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            Upcoming Events
           </h1>
-          <p className="text-base-content/70 max-w-2xl mx-auto">
-            Explore the upcoming Momentum Office Party cities and mixers, based
-            on the current roadmap.
+
+          {/* Gold divider */}
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="w-10 h-[1px] bg-[var(--color-accent)]" />
+            <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]" />
+            <div className="w-10 h-[1px] bg-[var(--color-accent)]" />
+          </div>
+
+          <p
+            className="text-white/50 text-sm max-w-xl mx-auto leading-relaxed"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            Explore the Momentum Office Party cities and mixers across the current roadmap.
           </p>
         </header>
 
-        <div className="mb-8 flex justify-center gap-4">
-          <button
-            type="button"
-            className={activeTab === "coming-up" ? buttonActive : buttonInactive}
-            onClick={() => setActiveTab("coming-up")}
-          >
-            Coming Up
-          </button>
-          <button
-            type="button"
-            className={activeTab === "future" ? buttonActive : buttonInactive}
-            onClick={() => setActiveTab("future")}
-          >
-            Future
-          </button>
+        {/* Tabs */}
+        <div className="mb-10 flex justify-center gap-3">
+          {(
+            [
+              { id: "coming-up", label: "Coming Up" },
+              { id: "future", label: "Future" },
+            ] as { id: Tab; label: string }[]
+          ).map(({ id, label }) => {
+            const isActive = activeTab === id;
+            return (
+              <button
+                key={id}
+                type="button"
+                onClick={() => setActiveTab(id)}
+                className={`
+                  px-8 py-3 text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300
+                  ${isActive
+                    ? "bg-[var(--color-primary)] text-black shadow-[0_0_24px_rgba(212,175,55,0.3)]"
+                    : "border border-white/20 text-white/60 hover:border-[var(--color-accent)]/50 hover:text-[var(--color-accent)]"
+                  }
+                `}
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                {label}
+              </button>
+            );
+          })}
         </div>
 
-        <div className="space-y-10">
+        {/* Content */}
+        <div className="space-y-12">
           {activeTab === "coming-up"
             ? renderEntries(COMING_UP)
             : renderEntries(FUTURE)}

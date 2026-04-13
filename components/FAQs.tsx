@@ -1,5 +1,9 @@
 "use client";
+
 import React, { useState } from "react";
+import Script from "next/script";
+
+// ─── Types ────────────────────────────────────────────────────────────────────
 
 type FAQItem = {
   question: string;
@@ -11,6 +15,8 @@ type FAQSection = {
   icon: string;
   items: FAQItem[];
 };
+
+// ─── Data ─────────────────────────────────────────────────────────────────────
 
 const FAQ_DATA: FAQSection[] = [
   {
@@ -35,8 +41,7 @@ const FAQ_DATA: FAQSection[] = [
     items: [
       {
         question: "Is there parking available?",
-        answer:
-          "Yes, complimentary parking options are available at the venue.",
+        answer: "Yes, complimentary parking options are available at the venue.",
       },
       {
         question: "Will there be a tour of the Coworking space?",
@@ -118,8 +123,7 @@ const FAQ_DATA: FAQSection[] = [
       },
       {
         question: "Where is the event located?",
-        answer:
-          "Muze Office – 6860 Bermuda Rd Suite 200, Las Vegas, NV 89119",
+        answer: "Muze Office – 6860 Bermuda Rd Suite 200, Las Vegas, NV 89119",
       },
       {
         question: "How many people will attend?",
@@ -130,81 +134,190 @@ const FAQ_DATA: FAQSection[] = [
   },
 ];
 
+// ─── JSON-LD (FAQPage schema) ─────────────────────────────────────────────────
+
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_DATA.flatMap((section) =>
+    section.items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    }))
+  ),
+};
+
+// ─── AccordionItem ────────────────────────────────────────────────────────────
+
+function AccordionItem({
+  item,
+  itemId,
+  isOpen,
+  onToggle,
+}: {
+  item: FAQItem;
+  itemId: string;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div className="border-t border-black/10 first:border-t-0">
+      <button
+        type="button"
+        aria-expanded={isOpen}
+        aria-controls={`faq-answer-${itemId}`}
+        id={`faq-question-${itemId}`}
+        onClick={onToggle}
+        className="w-full flex items-start justify-between gap-6 py-4 text-left group"
+        style={{ fontFamily: "var(--font-body)" }}
+      >
+        <span className="text-black text-sm sm:text-base leading-relaxed">
+          {item.question}
+        </span>
+
+        {/* Plus / minus — red accent */}
+        <span
+          className="relative shrink-0 mt-0.5 w-4 h-4 flex items-center justify-center"
+          aria-hidden="true"
+        >
+          <span className="block w-3 h-[1.5px] bg-[#e03b2f]" />
+          <span
+            className="block w-[1.5px] h-3 bg-[#e03b2f] absolute transition-opacity duration-200"
+            style={{ opacity: isOpen ? 0 : 1 }}
+          />
+        </span>
+      </button>
+
+      {/* Answer — always in DOM for SEO crawlability */}
+      <div
+        id={`faq-answer-${itemId}`}
+        role="region"
+        aria-labelledby={`faq-question-${itemId}`}
+        className="overflow-hidden transition-all duration-300 ease-in-out"
+        style={{ maxHeight: isOpen ? "400px" : "0px" }}
+      >
+        <p
+          className="text-black/60 text-sm leading-relaxed pb-4 pr-8"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          {item.answer}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// ─── FAQSectionCard ───────────────────────────────────────────────────────────
+
+function FAQSectionCard({
+  section,
+  openItems,
+  onToggle,
+}: {
+  section: FAQSection;
+  openItems: Set<string>;
+  onToggle: (id: string) => void;
+}) {
+  return (
+    <div className="bg-[#1a1a1a]/20 border-l-2 border-[#e03b2f] rounded-lg px-6 py-5">
+      {/* Section label */}
+      <div className="flex items-center gap-2 mb-4">
+        <span className="text-base" aria-hidden="true">
+          {section.icon}
+        </span>
+        <p
+          className="text-[#e03b2f] text-[0.6rem] uppercase tracking-[0.35em] font-semibold"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          {section.title}
+        </p>
+      </div>
+
+      {/* Accordion items */}
+      <div>
+        {section.items.map((item, index) => {
+          const itemId = `${section.title}-${index}`;
+          return (
+            <AccordionItem
+              key={itemId}
+              item={item}
+              itemId={itemId}
+              isOpen={openItems.has(itemId)}
+              onToggle={() => onToggle(itemId)}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ─── FAQs ─────────────────────────────────────────────────────────────────────
+
 const FAQs: React.FC = () => {
-  const [openSection, setOpenSection] = useState<string | null>(null);
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
-  const toggleSection = (sectionTitle: string) => {
-    setOpenSection(openSection === sectionTitle ? null : sectionTitle);
-  };
-
   const toggleItem = (itemId: string) => {
-    const newOpenItems = new Set(openItems);
-    if (newOpenItems.has(itemId)) {
-      newOpenItems.delete(itemId);
-    } else {
-      newOpenItems.add(itemId);
-    }
-    setOpenItems(newOpenItems);
+    setOpenItems((prev) => {
+      const next = new Set(prev);
+      next.has(itemId) ? next.delete(itemId) : next.add(itemId);
+      return next;
+    });
   };
 
   return (
-    <section className="py-12 lg:py-16 bg-base-100">
-      <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
-        <header className="mb-10 text-center">
-          <h1 className="text-3xl lg:text-4xl font-bold tracking-tight mb-2">
-            FAQs
-          </h1>
-          <p className="text-base-content/70 max-w-2xl mx-auto">
-            Find answers to common questions about Momentum Office Party events.
-          </p>
-        </header>
+    <>
+      {/* JSON-LD: enables Google FAQ rich results in search */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+      />
 
-        <div className="space-y-4">
-          {FAQ_DATA.map((section) => (
-            <div
-              key={section.title}
-              className="collapse collapse-plus bg-base-200 border border-base-300"
+      <section className="bg-white py-16 lg:py-24 px-4 sm:px-8">
+        <div className="max-w-5xl mx-auto">
+
+          {/* Header */}
+          <header className="mb-12">
+            <p
+              className="text-[#e03b2f] text-[0.6rem] uppercase tracking-[0.4em] font-semibold mb-3"
+              style={{ fontFamily: "var(--font-body)" }}
             >
-              <input
-                type="checkbox"
-                checked={openSection === section.title}
-                onChange={() => toggleSection(section.title)}
+              Got Questions?
+            </p>
+            <h1
+              className="text-4xl sm:text-5xl lg:text-6xl font-light text-black leading-tight"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Frequently Asked
+              <br />
+              Questions.
+            </h1>
+            {/* Red rule */}
+            <div className="w-10 h-[2px] bg-[#e03b2f] mt-6 mb-5" />
+            <p
+              className="text-black/50 text-sm leading-relaxed max-w-md"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Everything you need to know about Momentum Office Party events.
+            </p>
+          </header>
+
+          {/* Section cards */}
+          <div className="space-y-3">
+            {FAQ_DATA.map((section) => (
+              <FAQSectionCard
+                key={section.title}
+                section={section}
+                openItems={openItems}
+                onToggle={toggleItem}
               />
-              <div className="collapse-title text-xl font-semibold">
-                <span className="mr-2">{section.icon}</span>
-                {section.title}
-              </div>
-              <div className="collapse-content">
-                <div className="space-y-3 pt-2">
-                  {section.items.map((item, index) => {
-                    const itemId = `${section.title}-${index}`;
-                    return (
-                      <div
-                        key={itemId}
-                        className="collapse collapse-arrow bg-base-100 border border-base-300"
-                      >
-                        <input
-                          type="checkbox"
-                          checked={openItems.has(itemId)}
-                          onChange={() => toggleItem(itemId)}
-                        />
-                        <div className="collapse-title text-base font-medium">
-                          {item.question}
-                        </div>
-                        <div className="collapse-content">
-                          <p className="text-base-content/80">{item.answer}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

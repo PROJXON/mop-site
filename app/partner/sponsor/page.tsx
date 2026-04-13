@@ -6,6 +6,20 @@ import { SponsorTiers } from "@/components/SponsorTiers";
 import WhySponsor from "@/components/WhySponsor";
 import ActivationsSection from "@/components/ActivationsSection";
 
+export const metadata = {
+  title: "Sponsor | Momentum Office Party",
+  description: "Sponsor Momentum Office Party and get your brand in front of our curated audience of ambitious professionals.",
+  keywords: ["Sponsor", "Momentum Office Party", "Sponsorship", "Partner", "Brand", "Networking", "Las Vegas", "PROJXON", "Mark Phelan"],
+  // sponsors and advantages of sponsoring
+  openGraph: {
+    title: "Sponsor | Momentum Office Party",
+    description: "Sponsor Momentum Office Party and get your brand in front of our curated audience of ambitious professionals.",
+    url: "https://www.momentumofficeparty.com/partner/sponsor",
+    siteName: "Momentum Office Party",
+  },
+}
+
+
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 interface TierProps {

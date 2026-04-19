@@ -1,39 +1,37 @@
-import React from "react";
-import Link from "next/link";
-import styles from "./SponsorPage.module.css";
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+interface Stat {
+  value: string;
+  label: string;
+}
+
+// ─── Data ─────────────────────────────────────────────────────────────────────
+
+const STATS: Stat[] = [
+  { value: "100+", label: "Members" },
+  { value: "15,000+", label: "Digital Reach" },
+  { value: "3", label: "Sponsor Tiers" },
+];
+
+// ─── SponsorsCTA ──────────────────────────────────────────────────────────────
 
 const SponsorsCTA = () => {
   return (
     <section
-      className="hero-glow"
+      className="hero-glow flex flex-col items-center justify-center text-center relative"
       style={{
-        // Background gradient with subtle animation
         backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/networking.jpg')",
+          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/sponsorwall.png')",
         backgroundPosition: "center",
         backgroundSize: "cover",
         animation: "glowAnimation 15s linear infinite",
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        position: "relative",
+        minHeight: "85vh",
       }}
     >
-      <div className="card bg-white  my-5 lg:px-30 py-10 opacity-90">
-        {/* Grid lines */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            pointerEvents: "none",
-            backgroundSize: "80px 80px",
-          }}
-        />
-
+      <div className="card bg-white my-5 lg:px-30 py-10 opacity-90">
         <div style={{ position: "relative", maxWidth: 800 }}>
+
+          {/* Overline */}
           <p
             className="section-label animate-fade-up"
             style={{
@@ -47,6 +45,8 @@ const SponsorsCTA = () => {
           >
             Las Vegas, NV · Momentum Office Party
           </p>
+
+          {/* Headline */}
           <h1
             className="font-display animate-fade-up delay-1"
             style={{
@@ -64,6 +64,8 @@ const SponsorsCTA = () => {
               Movement.
             </span>
           </h1>
+
+          {/* Subheading */}
           <p
             className="animate-fade-up delay-2"
             style={{
@@ -78,21 +80,12 @@ const SponsorsCTA = () => {
             creatives converge. Put your brand at the center of it.
           </p>
 
-          <div
-            className="animate-fade-up delay-3"
-            style={{
-              display: "flex",
-              gap: "1rem",
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          >
+          {/* CTAs */}
+          <div className="animate-fade-up delay-3 flex flex-wrap justify-center gap-4">
             <a
               href="#tiers"
-              className="cta-pulse hover:scale-105 transition-transform"
+              className="bg-black text-white hover:scale-105 transition-transform"
               style={{
-                background: "var(--color-secondary)",
-                color: "var(--color-primary)",
                 padding: "1rem 2.5rem",
                 fontWeight: 700,
                 fontSize: "0.8rem",
@@ -105,11 +98,9 @@ const SponsorsCTA = () => {
               View Sponsorship Tiers
             </a>
             <a
-              className="hover:scale-105 transition-transform"
               href="mailto:events@projxon.com"
+              className="border border-black bg-white text-black hover:scale-105 transition-all duration-200"
               style={{
-                border: "var(--color-secondary) 2px solid",
-                color: "var(--color-primary-content)",
                 padding: "1rem 2.5rem",
                 fontWeight: 500,
                 fontSize: "0.8rem",
@@ -117,7 +108,6 @@ const SponsorsCTA = () => {
                 textTransform: "uppercase",
                 textDecoration: "none",
                 display: "inline-block",
-                transition: "all 0.2s",
               }}
             >
               Talk to a Coordinator
@@ -126,30 +116,18 @@ const SponsorsCTA = () => {
 
           {/* Stats bar */}
           <div
-            className="animate-fade-up delay-4"
+            className="animate-fade-up delay-4 flex flex-wrap justify-center gap-12"
             style={{
-              display: "flex",
-              gap: "3rem",
-              justifyContent: "center",
               marginTop: "5rem",
               padding: "2rem",
               borderTop: "1px solid var(--color-surface)",
-              flexWrap: "wrap",
             }}
           >
-            {[
-              { value: "100+", label: "Members" },
-              { value: "15,000+", label: "Digital Reach" },
-              { value: "3", label: "Sponsor Tiers" },
-            ].map((stat) => (
-              <div key={stat.label} style={{ textAlign: "center" }}>
+            {STATS.map((stat) => (
+              <div key={stat.label} className="text-center">
                 <p
-                  className="font-display "
-                  style={{
-                    fontSize: "2.5rem",
-                    color: "black",
-                    lineHeight: 1,
-                  }}
+                  className="font-display"
+                  style={{ fontSize: "2.5rem", color: "black", lineHeight: 1 }}
                 >
                   {stat.value}
                 </p>
@@ -173,18 +151,18 @@ const SponsorsCTA = () => {
   );
 };
 
+// ─── SponsorContact ───────────────────────────────────────────────────────────
+
 const SponsorContact = () => {
+  const EMAIL = "events@projxon.com";
+
   return (
-    <section
-      style={{
-        textAlign: "center",
-        padding: "4rem 0 6rem",
-        color: "var(--color-surface-2)",
-      }}
-    >
+    <section className="text-center py-8 pb-24 text-[var(--color-surface-2)] bg-black/20">
+
       <p className="section-label" style={{ marginBottom: "1.5rem" }}>
         Ready to Partner?
       </p>
+
       <h2
         className="font-display"
         style={{
@@ -197,8 +175,9 @@ const SponsorContact = () => {
       >
         Let's build something
         <br />
-        <em style={{ color: "var(--color-primary-active)" }}>together.</em>
+        <em style={{ color: "var(--color-primary)" }}>together.</em>
       </h2>
+
       <p
         style={{
           fontSize: "1rem",
@@ -212,8 +191,8 @@ const SponsorContact = () => {
       </p>
 
       <a
-        href="mailto:events@projxon.com"
-        className="cta-pulse"
+        href={`mailto:${EMAIL}`}
+        className="drop-shadow-[0_0_10px_rgba(0,0,0,0.5)]"
         style={{
           display: "inline-block",
           background: "black",
@@ -230,16 +209,11 @@ const SponsorContact = () => {
         Contact a Sponsorship Coordinator
       </a>
 
-      <p
-        style={{
-          fontSize: "0.8rem",
-          letterSpacing: "0.1em",
-        }}
-      >
-        events@projxon.com
-      </p>
+      <p style={{ fontSize: "0.8rem", letterSpacing: "0.1em" }}>{EMAIL}</p>
     </section>
   );
 };
+
+// ─── Exports ──────────────────────────────────────────────────────────────────
 
 export { SponsorsCTA, SponsorContact };
